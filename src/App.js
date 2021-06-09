@@ -3,10 +3,11 @@ import { Route, Switch } from 'react-router';
 import Home from './page/Home';
 import MusicDetail from './page/MusicDetail';
 import MusicList from './page/MusicList';
+import './style/app.css';
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/musiclist/:moodid" component={MusicList} />

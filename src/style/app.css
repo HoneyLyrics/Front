@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.header img {
+  width: 100px;
+  object-fit: contain;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
+
+.searchbar input {
+  width: 250px;
+  margin-right: 5px;
+}
+
+.searchbar button {
+  width: 35px;
+}
+
+.mood-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 10%;
+}
+
+.mood-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 18rem;
+  height: 9rem;
+  margin: 1rem 1rem 0 1rem;
+}
+
+.mood-item .mood-name {
+  font-size: 35px;
+  color: white;
+  font-style: italic;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.mood-item .short-desc {
+  font-size: 12px;
+}
