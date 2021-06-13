@@ -5,7 +5,11 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/153970/15397087.jpg?version=undefined',
     artist: 'The Weeknd, Ariana Grande',
-    youtubeUrl: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
+    externalUrls: {
+      youtube: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
+      melon: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
+      spotify: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
+    },
     lyrics: `Ooh Ooh
     Na na yeah
     I saw you dancing
@@ -68,7 +72,11 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/9969/996989.jpg?version=undefined',
     artist: 'Dua Lipa',
-    youtubeUrl: 'https://www.youtube.com/watch?v=TUVcZfQe-Kw',
+    externalUrls: {
+      youtube: 'https://www.youtube.com/watch?v=TUVcZfQe-Kw',
+      melon: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
+      spotify: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
+    },
     lyrics: `Billboard Baby
     Dua Lipa make 'em dance
     when it come on
@@ -214,7 +222,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/151758/15175845.jpg?version=undefined',
     artist: 'Justin Bieber',
-    youtubeUrl: 'https://www.youtube.com/watch?v=tQ0yjYUFKAE',
+    externalUrls: { youtube: 'https://www.youtube.com/watch?v=tQ0yjYUFKAE' },
     lyrics: `I got my peaches out in Georgia
     Oh yeah shit
     I get my weed from California
@@ -317,12 +325,11 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/204017/20401773.jpg?version=undefined',
     artist: 'TWICE (트와이스)',
-    youtubeUrl: 'https://www.youtube.com/watch?v=XA2YEHn-A8Q',
+    externalUrls: { youtube: 'https://www.youtube.com/watch?v=XA2YEHn-A8Q' },
     lyrics: `너와 있을 땐 내게
     신기한 변화가 있는데
     자꾸 미소 짓게 돼
     아무 일도 없는데
-    
     자꾸 마법에 걸려
     밤을 새워도 안 졸려
     다른 생각 지워져
@@ -330,25 +337,20 @@ const songs = [
     사랑이 참 쉬워져
     그래서 빠지고 빠져 점점 너에게
     That's what you do to me
-    
     나는 Alcohol free 근데 취해
     마신 게 하나도 없는데
     너와 있을 때마다 이래
     날 보는 네 눈빛 때문에
-    
     너는 눈으로 마시는 내 Champagne, 내 Wine
     내 Tequila, margarita
     Mojito with lime
     Sweet mimosa, pina colada
-    
     I'm drunk in you
     I'm drunk in you
-    
     너는 정말 특별해
     전혀 독하지 않은데
     낮에 별이 뜨게 해
     한 모금 마셨는데
-    
     자꾸 마법에 걸려
     밤을 새워도 안 졸려
     다른 생각 지워져
@@ -356,32 +358,26 @@ const songs = [
     사랑이 참 쉬워져
     그래서 빠지고 빠져 점점 너에게
     That's what you do to me
-    
     나는 Alcohol free 근데 취해
     마신 게 하나도 없는데
     너와 있을 때마다 이래
     날 보는 네 눈빛 때문에
-    
     Alcohol 도수는 완전 0.0%
     근데 마실 때마다 자꾸 길을 잃어
     자고 일어나도 깨지가 않아
     근데 이 기분 싫지가 않아
-    
     Easy to the mouth and tummy
     Like a drink made of honey
     이 술 이름은 도대체 뭐니
     Makes the whole world bright and sunny
-    
     나는 Alcohol free 근데 취해
     마신 게 하나도 없는데
     너와 있을 때마다 이래
     날 보는 네 눈빛 때문에
-    
     너는 눈으로 마시는 내 Champagne, 내 Wine
     내 Tequila, margarita
     Mojito with lime
     Sweet mimosa, pina colada
-    
     I'm drunk in you
     I'm drunk in you`,
   },
@@ -391,7 +387,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/9991/999186.jpg?version=undefined',
     artist: '장범준',
-    youtubeUrl: 'https://www.youtube.com/watch?v=JR-wv5fOJEY',
+    externalUrls: { youtube: 'https://www.youtube.com/watch?v=JR-wv5fOJEY' },
     lyrics: `당신은 날 설레게 만들어
     조용한 내 마음 자꾸만 춤추게 해
     얼마나 얼마나 날 떨리게 하는지
