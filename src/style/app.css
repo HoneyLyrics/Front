@@ -64,3 +64,81 @@ code {
 .mood-item .short-desc {
   font-size: 12px;
 }
+
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.song-item {
+  margin-top: 1rem;
+  display: flex;
+  width: 835px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 3px 3px 5px lightgrey;
+}
+
+.song-item .thumbnail {
+  width: 232px;
+  height: 232px;
+}
+
+.song-item .thumbnail img {
+  width: 232px;
+  height: 232px;
+}
+
+.song-item .song-info {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  padding-left: 40px;
+}
+
+.song-info .song-title {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.song-info .song-artist {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.song-info .song-lyrics {
+  font-size: 13px;
+  color: #696969;
+}
+
+.song-item .external-link {
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.song-item .external-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.external-link-anchor-icon .youtube {
+  color: #ff0000;
+}
+.external-link-anchor-icon .spotify {
+  color: #1ed760;
+}
+.external-link-anchor-icon .melon {
+  color: #00cd3b;
+  width: 16px;
+  height: 16px;
+}
+
+.external-link-anchor-text {
+  position: relative;
+  top: -4px;
+}
