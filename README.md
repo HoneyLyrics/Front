@@ -2,3 +2,4 @@
 
 - 기술스택
   - React
+  - React-Icons
