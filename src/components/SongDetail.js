@@ -2,9 +2,19 @@ import React from 'react';
 import { AiFillYoutube } from 'react-icons/ai';
 import { FaSpotify } from 'react-icons/fa';
 import melon from '../asset/melon.png';
+import moods from '../asset/moods';
 
 const SongDetail = ({ song }) => {
-  const { title, imgUrl, artist, externalUrls, lyrics } = song;
+  const { title, imgUrl, artist, moodTags, externalUrls, lyrics } = song;
+
+  const moodTagList = moodTags.map(tag => {
+    const mood = moods.find(m => m.id === tag);
+    return (
+      <span className={mood.moodName} style={{ borderColor: mood.color }}>
+        {mood.moodName_kr}
+      </span>
+    );
+  });
 
   const externalIcon = url => {
     switch (url) {
@@ -41,6 +51,7 @@ const SongDetail = ({ song }) => {
         <div className="song-info-detail-text">
           <span className="song-title">{title}</span>
           <span className="song-artist">{artist}</span>
+          <span className="mood-tags">{moodTagList}</span>
           <span className="external-link">{externalLinks}</span>
         </div>
       </div>
