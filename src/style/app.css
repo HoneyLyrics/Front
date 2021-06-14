@@ -150,6 +150,7 @@ code {
   width: 32px;
   height: 32px;
   padding: 15px;
+  padding-top: 17px;
 }
 
 .detail-header .header {
@@ -165,4 +166,66 @@ code {
   margin-left: 19%;
   height: 27px;
   padding: 24px;
+}
+
+.song-detail {
+  margin: 0 18%;
+}
+
+.song-detail .song-info-detail img {
+  width: 450px;
+}
+
+.song-detail .song-info-detail {
+  display: flex;
+}
+
+.song-detail .song-info-detail .song-info-detail-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4%;
+}
+
+.song-detail .song-info-detail .song-info-detail-text .song-title {
+  font-size: 25px;
+  font-weight: 900;
+  margin: 7% 0;
+}
+
+.song-detail .song-info-detail .song-info-detail-text .song-artist {
+  font-size: 17px;
+  font-weight: 300;
+  margin-bottom: 95%;
+}
+
+.song-detail .song-info-detail .song-info-detail-text .external-link {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.song-detail .song-info-detail .song-info-detail-text .external-link a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  /* background: #f7f7f7; */
+  padding: 3px 5px;
+  font-weight: 500;
+}
+
+.song-info-detail-text .external-link-anchor-text {
+  position: relative;
+  left: 3px;
+  top: -4px;
+}
+
+.song-info-detail-text .external-link-anchor-icon .melon {
+  width: 16px;
+  height: 16px;
+}
+
+.lyrics-info .song-lyrics {
+  line-height: 2;
+  color: #767676;
+  font-size: 14px;
 }
