@@ -29,13 +29,11 @@ const SongItem = ({
     }
   };
 
-  const externalLinks = Object.keys(externalUrls).map(url => (
-    <>
-      <a href={externalUrls[url]} target="_blank" rel="noreferrer">
-        <span className="external-link-anchor-icon">{externalIcon(url)}</span>
-        <span className="external-link-anchor-text">{url}</span>
-      </a>
-    </>
+  const externalLinks = Object.keys(externalUrls).map((url, index) => (
+    <a key={index} href={externalUrls[url]} target="_blank" rel="noreferrer">
+      <span className="external-link-anchor-icon">{externalIcon(url)}</span>
+      <span className="external-link-anchor-text">{url}</span>
+    </a>
   ));
 
   return (

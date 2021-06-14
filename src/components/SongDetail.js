@@ -10,7 +10,11 @@ const SongDetail = ({ song }) => {
   const moodTagList = moodTags.map(tag => {
     const mood = moods.find(m => m.id === tag);
     return (
-      <span className={mood.moodName} style={{ borderColor: mood.color }}>
+      <span
+        key={mood.id}
+        className={mood.moodName}
+        style={{ borderColor: mood.color }}
+      >
         {mood.moodName_kr}
       </span>
     );
@@ -29,8 +33,8 @@ const SongDetail = ({ song }) => {
     }
   };
 
-  const externalLinks = Object.keys(externalUrls).map(url => (
-    <a href={externalUrls[url]} target="_blank" rel="noreferrer">
+  const externalLinks = Object.keys(externalUrls).map((url, index) => (
+    <a key={index} href={externalUrls[url]} target="_blank" rel="noreferrer">
       <span className="external-link-anchor-icon">{externalIcon(url)}</span>
       <span className="external-link-anchor-text">{url}</span>
     </a>
