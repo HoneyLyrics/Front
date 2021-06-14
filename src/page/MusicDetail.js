@@ -1,13 +1,12 @@
 import React from 'react';
+import DetailHeader from '../components/DetailHeader';
+import SongDetail from '../components/SongDetail';
 
 const MusicDetail = () => {
   return (
     <div>
-      <div>
-        <div>
-          <div>detail</div>
-        </div>
-      </div>
+      <DetailHeader />
+      <SongDetail />
     </div>
   );
 };

@@ -30,7 +30,6 @@ code {
 
 .searchbar input {
   width: 250px;
-  margin-right: 5px;
 }
 
 .searchbar button {
@@ -141,4 +140,29 @@ code {
 .external-link-anchor-text {
   position: relative;
   top: -4px;
+}
+
+.detail-header {
+  display: flex;
+}
+
+.detail-header .go-back-button svg {
+  width: 32px;
+  height: 32px;
+  padding: 15px;
+}
+
+.detail-header .header {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.detail-header .header img {
+  width: 68px;
+}
+
+.detail-header .searchbar {
+  margin-left: 19%;
+  height: 27px;
+  padding: 24px;
 }
