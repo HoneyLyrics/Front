@@ -5,6 +5,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/153970/15397087.jpg?version=undefined',
     artist: 'The Weeknd, Ariana Grande',
+    moodTags: ['1', '2', '3'],
     externalUrls: {
       youtube: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
       melon: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
@@ -72,6 +73,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/9969/996989.jpg?version=undefined',
     artist: 'Dua Lipa',
+    moodTags: ['1', '2', '3'],
     externalUrls: {
       youtube: 'https://www.youtube.com/watch?v=TUVcZfQe-Kw',
       melon: 'https://www.youtube.com/watch?v=LIIDh-qI9oI',
@@ -222,6 +224,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/151758/15175845.jpg?version=undefined',
     artist: 'Justin Bieber',
+    moodTags: ['1', '2', '3'],
     externalUrls: { youtube: 'https://www.youtube.com/watch?v=tQ0yjYUFKAE' },
     lyrics: `I got my peaches out in Georgia
     Oh yeah shit
@@ -325,6 +328,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/204017/20401773.jpg?version=undefined',
     artist: 'TWICE (트와이스)',
+    moodTags: ['1', '2', '3'],
     externalUrls: { youtube: 'https://www.youtube.com/watch?v=XA2YEHn-A8Q' },
     lyrics: `너와 있을 땐 내게
     신기한 변화가 있는데
@@ -387,6 +391,7 @@ const songs = [
     imgUrl:
       'https://image.bugsm.co.kr/album/images/original/9991/999186.jpg?version=undefined',
     artist: '장범준',
+    moodTags: ['1', '2', '3'],
     externalUrls: { youtube: 'https://www.youtube.com/watch?v=JR-wv5fOJEY' },
     lyrics: `당신은 날 설레게 만들어
     조용한 내 마음 자꾸만 춤추게 해
