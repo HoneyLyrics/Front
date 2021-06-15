@@ -1,41 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AiFillYoutube } from 'react-icons/ai';
-import { FaSpotify } from 'react-icons/fa';
-import melon from '../asset/melon.png';
+import { handleExternalLinks, handleLyrics } from '../lib/handleSongProperties';
 
 const SongItem = ({
   song: { songId, artist, title, lyrics, imgUrl, externalUrls },
 }) => {
-  const lyricsSplit = lyrics
-    .split('\n')
-    .slice(0, 6)
-    .map((lyric, index) => (
-      <React.Fragment key={index}>
-        {lyric}&nbsp;&nbsp;&nbsp;
-        {index % 2 === 1 && index !== 5 ? <br /> : ''}
-      </React.Fragment>
-    ));
-
-  const externalIcon = url => {
-    switch (url) {
-      case 'youtube':
-        return <AiFillYoutube className="youtube" />;
-      case 'spotify':
-        return <FaSpotify className="spotify" />;
-      case 'melon':
-        return <img src={melon} alt="melon-logo" className="melon" />;
-      default:
-        return '';
-    }
-  };
-
-  const externalLinks = Object.keys(externalUrls).map((url, index) => (
-    <a key={index} href={externalUrls[url]} target="_blank" rel="noreferrer">
-      <span className="external-link-anchor-icon">{externalIcon(url)}</span>
-      <span className="external-link-anchor-text">{url}</span>
-    </a>
-  ));
+  const lyricsSplit = handleLyrics(lyrics);
+  const externalLinks = handleExternalLinks(externalUrls);
 
   return (
     <div className="song-item">

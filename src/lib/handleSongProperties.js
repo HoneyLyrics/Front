@@ -48,3 +48,14 @@ export const handleLyricsWithBr = lyrics =>
       <br />
     </React.Fragment>
   ));
+
+export const handleLyrics = lyrics =>
+  lyrics
+    .split('\n')
+    .slice(0, 6)
+    .map((lyric, index) => (
+      <React.Fragment key={index}>
+        {lyric}&nbsp;&nbsp;&nbsp;
+        {index % 2 === 1 && index !== 5 ? <br /> : ''}
+      </React.Fragment>
+    ));
