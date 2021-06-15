@@ -38,19 +38,21 @@ const SongItem = ({
   ));
 
   return (
-    <Link to={`/musicdetail/${songId}`}>
-      <div className="song-item">
+    <div className="song-item">
+      <Link to={`/musicdetail/${songId}`}>
         <div className="thumbnail">
           <img src={imgUrl} alt="song_image" />
         </div>
+      </Link>
+      <Link id="info-anchor" to={`/musicdetail/${songId}`}>
         <div className="song-info">
           <span className="song-title">{title}</span>
           <span className="song-artist">{artist}</span>
           <span className="song-lyrics">{lyricsSplit}...</span>
         </div>
-        <div className="external-link">{externalLinks}</div>
-      </div>
-    </Link>
+      </Link>
+      <div className="external-link">{externalLinks}</div>
+    </div>
   );
 };
 
