@@ -1,53 +1,18 @@
 import React from 'react';
-import { AiFillYoutube } from 'react-icons/ai';
-import { FaSpotify } from 'react-icons/fa';
-import melon from '../asset/melon.png';
-import moods from '../asset/moods';
 import songes from '../asset/songs';
+import {
+  handleExternalLinks,
+  handleLyricsWithBr,
+  handleMoodTags,
+} from '../lib/handleSongProperties';
 
 const SongDetail = ({ songid }) => {
   const song = songes[0].find(song => song.songId === songid);
   const { title, imgUrl, artist, moodTags, externalUrls, lyrics } = song;
 
-  const moodTagList = moodTags.map(tag => {
-    const mood = moods.find(m => m.id === tag);
-    return (
-      <span
-        key={mood.id}
-        className={mood.moodName}
-        style={{ borderColor: mood.color }}
-      >
-        {mood.moodName_kr}
-      </span>
-    );
-  });
-
-  const externalIcon = url => {
-    switch (url) {
-      case 'youtube':
-        return <AiFillYoutube className="youtube" />;
-      case 'spotify':
-        return <FaSpotify className="spotify" />;
-      case 'melon':
-        return <img src={melon} alt="melon-logo" className="melon" />;
-      default:
-        return '';
-    }
-  };
-
-  const externalLinks = Object.keys(externalUrls).map((url, index) => (
-    <a key={index} href={externalUrls[url]} target="_blank" rel="noreferrer">
-      <span className="external-link-anchor-icon">{externalIcon(url)}</span>
-      <span className="external-link-anchor-text">{url}</span>
-    </a>
-  ));
-
-  const lyricsWithBr = lyrics.split('\n').map((lyric, index) => (
-    <React.Fragment key={index}>
-      {lyric}
-      <br />
-    </React.Fragment>
-  ));
+  const moodTagList = handleMoodTags(moodTags);
+  const externalLinks = handleExternalLinks(externalUrls);
+  const lyricsWithBr = handleLyricsWithBr(lyrics);
 
   return (
     <div className="song-detail">
