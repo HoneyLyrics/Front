@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiFillYoutube } from 'react-icons/ai';
 import { FaSpotify } from 'react-icons/fa';
 import melon from '../asset/melon.png';
 
 const SongItem = ({
-  song: { artist, title, lyrics, imgUrl, externalUrls },
+  song: { songId, artist, title, lyrics, imgUrl, externalUrls },
 }) => {
   const lyricsSplit = lyrics
     .split('\n')
@@ -37,18 +38,19 @@ const SongItem = ({
   ));
 
   return (
-    <div className="song-item">
-      <div className="thumbnail">
-        <img src={imgUrl} alt="song_image" />
+    <Link to={`/musicdetail/${songId}`}>
+      <div className="song-item">
+        <div className="thumbnail">
+          <img src={imgUrl} alt="song_image" />
+        </div>
+        <div className="song-info">
+          <span className="song-title">{title}</span>
+          <span className="song-artist">{artist}</span>
+          <span className="song-lyrics">{lyricsSplit}...</span>
+        </div>
+        <div className="external-link">{externalLinks}</div>
       </div>
-      <div className="song-info">
-        <span className="song-title">{title}</span>
-        <span className="song-artist">{artist}</span>
-        {/* <span className="song-lyrics">{`${lyrics.substring(0, 100)}...`}</span> */}
-        <span className="song-lyrics">{lyricsSplit}...</span>
-      </div>
-      <div className="external-link">{externalLinks}</div>
-    </div>
+    </Link>
   );
 };
 
