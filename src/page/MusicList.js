@@ -8,7 +8,7 @@ const MusicList = ({ match }) => {
     <div>
       <Header />
       <Searchbar />
-      <SongList />
+      <SongList moodid={match.params.moodid} />
     </div>
   );
 };

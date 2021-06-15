@@ -1,8 +1,11 @@
 import React from 'react';
 import SongItem from './SongItem';
-import songs from '../asset/songs';
+import songes from '../asset/songs';
 
-const SongList = () => {
+const SongList = ({ moodid }) => {
+  // 여기서 api 처리
+  const songs = songes[Number(moodid) - 1];
+
   return (
     <div className="song-list">
       {songs.map(song => (
