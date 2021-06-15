@@ -159,6 +159,10 @@ code {
   display: flex;
 }
 
+.detail-header .go-back-button {
+  cursor: pointer;
+}
+
 .detail-header .go-back-button svg {
   width: 32px;
   height: 32px;
@@ -223,6 +227,7 @@ code {
   border-radius: 50px;
   padding: 10px;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .song-detail .song-info-detail .song-info-detail-text .external-link {
