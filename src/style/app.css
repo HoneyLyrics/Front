@@ -43,6 +43,10 @@ code {
   margin: 0 10%;
 }
 
+.mood-container > a {
+  text-decoration: none;
+}
+
 .mood-item {
   display: flex;
   justify-content: center;
@@ -62,6 +66,7 @@ code {
 
 .mood-item .short-desc {
   font-size: 12px;
+  color: black;
 }
 
 .song-list {
