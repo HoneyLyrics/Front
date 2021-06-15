@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -18,9 +22,14 @@ code {
   font-size: 2rem;
 }
 
+.header h1 {
+  cursor: pointer;
+}
+
 .header img {
   width: 100px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .searchbar {
@@ -43,6 +52,10 @@ code {
   margin: 0 10%;
 }
 
+.mood-container > a {
+  text-decoration: none;
+}
+
 .mood-item {
   display: flex;
   justify-content: center;
@@ -62,12 +75,20 @@ code {
 
 .mood-item .short-desc {
   font-size: 12px;
+  color: black;
 }
 
 .song-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.song-list #info-anchor {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 100%;
 }
 
 .song-item {
@@ -90,10 +111,10 @@ code {
 
 .song-item .song-info {
   width: inherit;
+  height: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 25px;
+  justify-content: space-around;
   padding-left: 40px;
 }
 
@@ -140,10 +161,15 @@ code {
 .external-link-anchor-text {
   position: relative;
   top: -4px;
+  left: 3px;
 }
 
 .detail-header {
   display: flex;
+}
+
+.detail-header .go-back-button {
+  cursor: pointer;
 }
 
 .detail-header .go-back-button svg {
@@ -210,6 +236,7 @@ code {
   border-radius: 50px;
   padding: 10px;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .song-detail .song-info-detail .song-info-detail-text .external-link {

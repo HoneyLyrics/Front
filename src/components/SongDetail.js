@@ -3,8 +3,10 @@ import { AiFillYoutube } from 'react-icons/ai';
 import { FaSpotify } from 'react-icons/fa';
 import melon from '../asset/melon.png';
 import moods from '../asset/moods';
+import songes from '../asset/songs';
 
-const SongDetail = ({ song }) => {
+const SongDetail = ({ songid }) => {
+  const song = songes[0].find(song => song.songId === songid);
   const { title, imgUrl, artist, moodTags, externalUrls, lyrics } = song;
 
   const moodTagList = moodTags.map(tag => {

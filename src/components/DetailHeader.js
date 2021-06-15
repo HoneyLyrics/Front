@@ -1,12 +1,13 @@
 import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
+import { withRouter } from 'react-router-dom';
 import Header from './Header';
 import Searchbar from './Searchbar';
 
-const DetailHeader = () => {
+const DetailHeader = ({ history }) => {
   return (
     <div className="detail-header">
-      <div className="go-back-button">
+      <div className="go-back-button" onClick={history.goBack}>
         <BiArrowBack />
       </div>
       <Header />
@@ -15,4 +16,4 @@ const DetailHeader = () => {
   );
 };
 
-export default DetailHeader;
+export default withRouter(DetailHeader);
