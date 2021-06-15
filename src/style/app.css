@@ -75,9 +75,11 @@ code {
   justify-content: center;
 }
 
-.song-list > a {
+.song-list #info-anchor {
   text-decoration: none;
   color: black;
+  width: 100%;
+  height: 100%;
 }
 
 .song-item {
@@ -100,10 +102,10 @@ code {
 
 .song-item .song-info {
   width: inherit;
+  height: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 25px;
+  justify-content: space-around;
   padding-left: 40px;
 }
 
@@ -150,6 +152,7 @@ code {
 .external-link-anchor-text {
   position: relative;
   top: -4px;
+  left: 3px;
 }
 
 .detail-header {
