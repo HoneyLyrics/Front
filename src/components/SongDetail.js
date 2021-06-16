@@ -5,7 +5,7 @@ import {
   handleExternalLinks,
   handleLyricsWithBr,
   handleMoodTags,
-} from '../lib/handleSongProperties';
+} from '../util/handleSongProperties';
 
 const SongDetail = ({ songid }) => {
   const song = songes[0].find(song => song.songId === songid);

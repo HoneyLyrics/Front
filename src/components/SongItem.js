@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { handleExternalLinks, handleLyrics } from '../lib/handleSongProperties';
+import {
+  handleExternalLinks,
+  handleLyrics,
+} from '../util/handleSongProperties';
 
 const SongItem = ({
   song: { songId, artist, title, lyrics, imgUrl, externalUrls },

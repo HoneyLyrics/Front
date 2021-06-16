@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import Home from './page/Home';
 import MusicDetail from './page/MusicDetail';
 import MusicList from './page/MusicList';
-import ScrollToTop from './lib/ScrollToTop';
+import ScrollToTop from './util/ScrollToTop';
 import './style/app.css';
 import Footer from './components/Footer';
 
