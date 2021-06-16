@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -269,4 +270,22 @@ code {
   line-height: 2;
   color: #767676;
   font-size: 14px;
+  height: 170px;
+  overflow: hidden;
+}
+
+.lyrics-info .song-lyrics.lyrics-on {
+  height: auto;
+  overflow: visible;
+}
+
+.fold-button {
+  position: relative;
+  left: 50%;
+  background: white;
+  border: none;
+}
+
+.fold-button span {
+  padding-right: 3px;
 }
