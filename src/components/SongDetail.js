@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import songes from '../asset/songs';
+import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
 import {
   handleExternalLinks,
   handleLyricsWithBr,
@@ -13,6 +14,11 @@ const SongDetail = ({ songid }) => {
   const moodTagList = handleMoodTags(moodTags);
   const externalLinks = handleExternalLinks(externalUrls);
   const lyricsWithBr = handleLyricsWithBr(lyrics);
+
+  const [fold, setFold] = useState(true);
+  const handleFoldClick = () => {
+    setFold(fold => !fold);
+  };
 
   return (
     <div className="song-detail">
@@ -29,7 +35,22 @@ const SongDetail = ({ songid }) => {
       <h3>가사</h3>
       <hr />
       <div className="lyrics-info">
-        <span className="song-lyrics">{lyricsWithBr}</span>
+        <div className={`song-lyrics ${fold ? '' : 'lyrics-on'}`}>
+          {lyricsWithBr}
+        </div>
+        <button className="fold-button" onClick={handleFoldClick}>
+          {fold ? (
+            <>
+              <span>더보기</span>
+              <AiOutlineDown />
+            </>
+          ) : (
+            <>
+              <span>접기</span>
+              <AiOutlineUp />
+            </>
+          )}
+        </button>
       </div>
     </div>
   );
