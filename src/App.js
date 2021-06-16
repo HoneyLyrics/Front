@@ -5,6 +5,7 @@ import MusicDetail from './page/MusicDetail';
 import MusicList from './page/MusicList';
 import ScrollToTop from './lib/ScrollToTop';
 import './style/app.css';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/musiclist/:moodid" component={MusicList} />
         <Route path="/musicdetail/:songid" component={MusicDetail} />
       </Switch>
+      <Footer />
     </div>
   );
 };
