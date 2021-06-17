@@ -327,3 +327,8 @@ code {
   width: 20px;
   height: auto;
 }
+
+.related-video .video-tags {
+  display: flex;
+  justify-content: space-around;
+}

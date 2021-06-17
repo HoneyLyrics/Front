@@ -22,7 +22,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# youtube api key
+apiKey.js
+youtubeLinks.js
+
 # image file
 *.png
+<<<<<<< HEAD
 *.gif
 *.jpg
+=======
+*.gif
+>>>>>>> 8b96f1ef95df58108e6eea28c1e4919e44ba0ae7
