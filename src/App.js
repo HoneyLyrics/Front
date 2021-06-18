@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Route, Switch } from 'react-router';
 import Home from './page/Home';
 import MusicDetail from './page/MusicDetail';
@@ -8,12 +8,21 @@ import './style/app.css';
 import Footer from './components/Footer';
 
 const App = () => {
+  const [songs, setSongs] = useState(null);
+
+  const onChangeSongs = useCallback(data => {
+    setSongs(data);
+  }, []);
+
   return (
     <div className="App">
       <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/musiclist/:moodid" component={MusicList} />
+        <Route
+          path="/musiclist/:moodid"
+          render={() => <MusicList songs={songs} setSongs={onChangeSongs} />}
+        />
         <Route path="/musicdetail/:songid" component={MusicDetail} />
       </Switch>
       <Footer />

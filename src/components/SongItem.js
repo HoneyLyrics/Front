@@ -1,27 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  handleExternalLinks,
-  handleLyrics,
-} from '../util/handleSongProperties';
+import { handleLyrics, handleMelonLinks } from '../util/handleSongProperties';
+import noImage from '../asset/no-image.gif';
 
-const SongItem = ({
-  song: { songId, artist, title, lyrics, imgUrl, externalUrls },
-}) => {
+const SongItem = ({ song: { songId, singer, title, lyrics, imgURL } }) => {
   const lyricsSplit = handleLyrics(lyrics);
-  const externalLinks = handleExternalLinks(externalUrls);
+  const externalLinks = handleMelonLinks(songId);
 
   return (
     <div className="song-item">
       <Link to={`/musicdetail/${songId}`}>
         <div className="thumbnail">
-          <img src={imgUrl} alt="song_image" />
+          <img src={imgURL || noImage} alt="song_image" />
         </div>
       </Link>
       <Link id="info-anchor" to={`/musicdetail/${songId}`}>
         <div className="song-info">
           <span className="song-title">{title}</span>
-          <span className="song-artist">{artist}</span>
+          <span className="song-artist">{singer}</span>
           <span className="song-lyrics">{lyricsSplit}...</span>
         </div>
       </Link>

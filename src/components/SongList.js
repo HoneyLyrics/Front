@@ -1,10 +1,9 @@
 import React from 'react';
 import SongItem from './SongItem';
-import songes from '../asset/songs';
+// import songes from '../asset/songs';
 
-const SongList = ({ moodid }) => {
-  // 여기서 api 처리
-  const songs = songes[Number(moodid) - 1];
+const SongList = ({ songs }) => {
+  // const songs2 = songes[0];
 
   return (
     <div className="song-list">
