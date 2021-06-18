@@ -1,6 +1,4 @@
 import React from 'react';
-import { AiFillYoutube } from 'react-icons/ai';
-import { FaSpotify } from 'react-icons/fa';
 import melon from '../asset/melon.png';
 import moods from '../asset/moods';
 
@@ -17,19 +15,6 @@ export const handleMoodTags = moodTags =>
       </span>
     );
   });
-
-const handleExternalIcons = url => {
-  switch (url) {
-    case 'youtube':
-      return <AiFillYoutube className="youtube" />;
-    case 'spotify':
-      return <FaSpotify className="spotify" />;
-    case 'melon':
-      return <img src={melon} alt="melon-logo" className="melon" />;
-    default:
-      return '';
-  }
-};
 
 export const handleMelonLinks = songId => (
   <a
