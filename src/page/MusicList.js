@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from '../../node_modules/axios/index';
 import Header from '../components/Header';
-import Searchbar from '../components/Searchbar';
 import SongList from '../components/SongList';
 
 const MusicList = ({ match, songs, setSongs }) => {
@@ -36,7 +35,6 @@ const MusicList = ({ match, songs, setSongs }) => {
   return (
     <div>
       <Header />
-      <Searchbar />
       {songListComponent}
       {/* <SongList /> */}
     </div>

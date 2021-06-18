@@ -2,7 +2,6 @@ import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { withRouter } from 'react-router-dom';
 import Header from './Header';
-import Searchbar from './Searchbar';
 
 const DetailHeader = ({ history }) => {
   return (
@@ -11,7 +10,6 @@ const DetailHeader = ({ history }) => {
         <BiArrowBack />
       </div>
       <Header />
-      <Searchbar />
     </div>
   );
 };
