@@ -26,10 +26,11 @@ code {
 
 .header h1 {
   cursor: pointer;
+  margin-left: 1.2rem;
 }
 
 .header img {
-  width: 100px;
+  width: 4rem;
   object-fit: contain;
   cursor: pointer;
 }
@@ -192,11 +193,15 @@ code {
 
 .detail-header .header {
   font-size: 12px;
-  margin-left: 20px;
+  margin-left: 38rem;
 }
 
 .detail-header .header img {
-  width: 68px;
+  width: 2rem;
+}
+
+.detail-header .header h1 {
+  margin-left: 0.8rem;
 }
 
 .detail-header .searchbar {
