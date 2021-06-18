@@ -62,13 +62,15 @@ const SongDetail = ({ song }) => {
           <span className="external-link">{externalLinks}</span>
         </div>
       </div>
+      <br />
       <div className="related-video">
-        <h3>관련 동영상</h3>
         <hr />
+        <h3>관련 동영상</h3>
         <div className="video-tags">{RelatedVideos}</div>
       </div>
-      <h3>가사</h3>
+      <br />
       <hr />
+      <h3>가사</h3>
       <div className="lyrics-info">
         <div className={`song-lyrics ${fold ? '' : 'lyrics-on'}`}>
           {lyricsWithBr}
