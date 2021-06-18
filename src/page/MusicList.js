@@ -28,7 +28,7 @@ const MusicList = ({ match, songs, setSongs }) => {
   const songListComponent = !songs ? (
     <div>노래없음</div>
   ) : loading ? (
-    <div style={{ width: '100%', height: '410px' }}>
+    <div style={{ width: '100%', height: '489px' }}>
       <LoopCircleLoading color="#ffa500b5" />
     </div>
   ) : (

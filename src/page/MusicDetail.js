@@ -29,7 +29,7 @@ const MusicDetail = ({ match, songs }) => {
   const songDetailBox = song ? (
     <SongDetail song={song} />
   ) : (
-    <div style={{ width: '100%', height: '515px' }}>
+    <div style={{ width: '100%', height: '540px' }}>
       <LoopCircleLoading color="#ffa500b5" />
     </div>
   );
