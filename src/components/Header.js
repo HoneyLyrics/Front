@@ -1,14 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import honey from '../asset/honey.png';
 
 const Header = ({ history }) => {
   return (
     <div className="header" onClick={() => history.push('/')}>
+      <img src={honey} alt="logo" />
       <h1>Honey Lyrics</h1>
-      <img
-        src="https://cdn-store.leagueoflegends.co.kr/images/v2/emotes/3153.png"
-        alt="Happy_Bee"
-      />
     </div>
   );
 };

@@ -8,8 +8,8 @@ const MoodList = () => {
       {moods.map(mood => (
         <Link key={mood.id} to={`/musiclist/${mood.id}`}>
           <div className="mood-item" style={{ background: mood.color }}>
-            <div className="mood-name">{mood.moodName}</div>
-            <div className="short-desc">short description</div>
+            <div className="mood-name">{mood.moodName_kr}</div>
+            <div className="short-desc">{mood.moodName}</div>
           </div>
         </Link>
       ))}
