@@ -31,15 +31,18 @@ const handleExternalIcons = url => {
   }
 };
 
-export const handleExternalLinks = externalUrls =>
-  Object.keys(externalUrls).map((url, index) => (
-    <a key={index} href={externalUrls[url]} target="_blank" rel="noreferrer">
-      <span className="external-link-anchor-icon">
-        {handleExternalIcons(url)}
-      </span>
-      <span className="external-link-anchor-text">{url}</span>
-    </a>
-  ));
+export const handleMelonLinks = songId => (
+  <a
+    href={`https://www.melon.com/song/detail.htm?songId=${songId}`}
+    target="_blank"
+    rel="noreferrer"
+  >
+    <span className="external-link-anchor-icon">
+      <img src={melon} alt="melon-logo" className="melon" />
+    </span>
+    <span className="external-link-anchor-text">멜론</span>
+  </a>
+);
 
 export const handleLyricsWithBr = lyrics =>
   lyrics.split('\n').map((lyric, index) => (
