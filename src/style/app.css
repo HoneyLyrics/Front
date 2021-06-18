@@ -314,6 +314,7 @@ code {
   justify-content: space-around;
   align-items: center;
   background: orange;
+  font-family: 'Noto Serif KR', serif;
 }
 
 .footer .copyright {

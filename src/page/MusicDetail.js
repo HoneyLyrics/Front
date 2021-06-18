@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import axios from '../../node_modules/axios/index';
 import DetailHeader from '../components/DetailHeader';
 import SongDetail from '../components/SongDetail';
+import { LoopCircleLoading } from 'react-loadingg';
 // import songes from '../asset/songs';
 
 const MusicDetail = ({ match, songs }) => {
@@ -25,14 +26,18 @@ const MusicDetail = ({ match, songs }) => {
     getSongInfo();
   }, [match]);
 
-  if (!song) {
-    return <div>노래 정보 없음</div>;
-  }
+  const songDetailBox = song ? (
+    <SongDetail song={song} />
+  ) : (
+    <div style={{ width: '100%', height: '515px' }}>
+      <LoopCircleLoading color="#ffa500b5" />
+    </div>
+  );
 
   return (
     <div>
       <DetailHeader />
-      <SongDetail song={song} />
+      {songDetailBox}
     </div>
   );
 };

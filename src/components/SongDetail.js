@@ -9,6 +9,7 @@ import axios from '../../node_modules/axios/index';
 import apiKey from '../asset/apikey';
 // import { getYoutubeData } from '../asset/youtubeLinks';
 import YoutubeIframe from '../util/YoutubeIframe';
+import { TransverseLoading } from 'react-loadingg';
 
 const SongDetail = ({ song }) => {
   const [{ songId, title, imgURL, singer, mood1, mood2, mood3, lyrics }] = song;
@@ -44,7 +45,9 @@ const SongDetail = ({ song }) => {
       <YoutubeIframe key={link.id.videoId} youtubeLink={link.id.videoId} />
     ))
   ) : (
-    <div>관련 영상이 없습니다</div>
+    <div>
+      <TransverseLoading color="red" style={{ position: 'none' }} />
+    </div>
   );
 
   return (
