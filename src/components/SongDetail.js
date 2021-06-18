@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import songes from '../asset/songs';
 import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
 import {
-  handleExternalLinks,
   handleLyricsWithBr,
+  handleMelonLinks,
   handleMoodTags,
 } from '../util/handleSongProperties';
-// import axios from '../../node_modules/axios/index';
-// import apiKey from '../asset/apikey';
-import { getYoutubeData } from '../asset/youtubeLinks';
+import axios from '../../node_modules/axios/index';
+import apiKey from '../asset/apikey';
+// import { getYoutubeData } from '../asset/youtubeLinks';
 import YoutubeIframe from '../util/YoutubeIframe';
 
-const SongDetail = ({ songid }) => {
+const SongDetail = ({ song }) => {
+  const [{ songId, title, imgURL, singer, mood1, mood2, mood3, lyrics }] = song;
+
   const [relatedLinks, setrelatedLinks] = useState(null);
   const [fold, setFold] = useState(true);
 
@@ -19,44 +20,41 @@ const SongDetail = ({ songid }) => {
     setFold(fold => !fold);
   };
 
-  const song = songes[0].find(song => song.songId === songid);
-  const { title, imgUrl, artist, moodTags, externalUrls, lyrics } = song;
-
   useEffect(() => {
     const getRelatedVideo = async () => {
       try {
-        // const query = `${artist} ${title}`;
-        // const response = await axios.get(
-        //   `https://www.googleapis.com/youtube/v3/search?part=id&key=${apiKey}&q=${query}&maxResults=3&type=video&videoEmbeddable=true`,
-        // );
-        const response = await getYoutubeData(songid);
-        setrelatedLinks(response.items);
+        const query = `${singer} ${title}`;
+        const response = await axios.get(
+          `https://www.googleapis.com/youtube/v3/search?part=id&key=${apiKey}&q=${query}&maxResults=3&type=video&videoEmbeddable=true`,
+        );
+        // const response = await getYoutubeData(songId);
+        setrelatedLinks(response.data.items);
       } catch (e) {
         console.log(e);
       }
     };
     getRelatedVideo();
-  }, [songid]);
+  }, [singer, title]);
 
-  const moodTagList = handleMoodTags(moodTags);
-  const externalLinks = handleExternalLinks(externalUrls);
+  const moodTagList = handleMoodTags([mood1, mood2, mood3]);
+  const externalLinks = handleMelonLinks(songId);
   const lyricsWithBr = handleLyricsWithBr(lyrics);
   const RelatedVideos = relatedLinks ? (
     relatedLinks.map(link => (
       <YoutubeIframe key={link.id.videoId} youtubeLink={link.id.videoId} />
     ))
   ) : (
-    <div>로딩중..</div>
+    <div>관련 영상이 없습니다</div>
   );
 
   return (
     <div className="song-detail">
       <h3>곡 정보</h3>
       <div className="song-info-detail">
-        <img src={imgUrl} alt="song_cover" />
+        <img src={imgURL} alt="song_cover" />
         <div className="song-info-detail-text">
           <span className="song-title">{title}</span>
-          <span className="song-artist">{artist}</span>
+          <span className="song-artist">{singer}</span>
           <span className="mood-tags">{moodTagList}</span>
           <span className="external-link">{externalLinks}</span>
         </div>
