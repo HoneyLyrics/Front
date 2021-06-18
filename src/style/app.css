@@ -26,6 +26,7 @@ code {
 
 .header h1 {
   cursor: pointer;
+  margin: 1rem 0;
   margin-left: 1.2rem;
 }
 
@@ -128,11 +129,13 @@ code {
   flex-direction: column;
   justify-content: space-around;
   padding-left: 40px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .song-info .song-title {
   font-size: 25px;
   font-weight: 900;
+  font-family: 'Noto Serif KR', serif;
 }
 
 .song-info .song-artist {
@@ -151,6 +154,7 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .song-item .external-link a {
@@ -166,8 +170,8 @@ code {
 }
 .external-link-anchor-icon .melon {
   color: #00cd3b;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .external-link-anchor-text {
@@ -212,6 +216,7 @@ code {
 
 .song-detail {
   margin: 0 18%;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .song-detail .song-info-detail img {
@@ -233,6 +238,7 @@ code {
   font-size: 25px;
   font-weight: 900;
   margin: 7% 0;
+  font-family: 'Noto Serif KR', serif;
 }
 
 .song-detail .song-info-detail .song-info-detail-text .song-artist {
@@ -243,7 +249,7 @@ code {
 
 .song-detail .song-info-detail .song-info-detail-text .mood-tags {
   /* margin-bottom: 40%; */
-  color: #767676;
+  color: #424242;
   font-size: 13px;
 }
 
@@ -277,13 +283,13 @@ code {
 }
 
 .song-info-detail-text .external-link-anchor-icon .melon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .lyrics-info .song-lyrics {
   line-height: 2;
-  color: #767676;
+  color: #424242;
   font-size: 14px;
   height: 170px;
   overflow: hidden;
@@ -307,30 +313,30 @@ code {
 
 .footer {
   width: 100%;
-  height: 120px;
+  height: 95px;
   margin-top: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background: orange;
+  font-family: 'Noto Serif KR', serif;
 }
 
-.footer .copyright {
-  padding-left: 55px;
+.footer .footer-logo img {
+  width: 36px;
+  padding-top: 10px;
 }
 
 .footer .contact-us .title {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 0.9rem;
 }
 
 .footer .contact-us .developers {
   padding-left: 5px;
-}
-
-.footer .contact-us .profile {
-  font-size: 18px;
+  font-size: 0.9rem;
+  display: flex;
 }
 
 .footer .contact-us a {

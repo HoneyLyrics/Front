@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from '../../node_modules/axios/index';
 import Header from '../components/Header';
-import Searchbar from '../components/Searchbar';
 import SongList from '../components/SongList';
+import { LoopCircleLoading } from 'react-loadingg';
 
 const MusicList = ({ match, songs, setSongs }) => {
   const moodId = match.params.moodid;
@@ -28,7 +28,9 @@ const MusicList = ({ match, songs, setSongs }) => {
   const songListComponent = !songs ? (
     <div>노래없음</div>
   ) : loading ? (
-    <div>로딩중..</div>
+    <div style={{ width: '100%', height: '489px' }}>
+      <LoopCircleLoading color="#ffa500b5" />
+    </div>
   ) : (
     <SongList songs={songs} />
   );
@@ -36,7 +38,6 @@ const MusicList = ({ match, songs, setSongs }) => {
   return (
     <div>
       <Header />
-      <Searchbar />
       {songListComponent}
       {/* <SongList /> */}
     </div>

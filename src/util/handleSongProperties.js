@@ -25,7 +25,7 @@ export const handleMelonLinks = songId => (
     <span className="external-link-anchor-icon">
       <img src={melon} alt="melon-logo" className="melon" />
     </span>
-    <span className="external-link-anchor-text">멜론</span>
+    <span className="external-link-anchor-text">Melon</span>
   </a>
 );
 
