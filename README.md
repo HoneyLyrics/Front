@@ -5,3 +5,4 @@
   - React-router
   - React-Icons
   - axios
+  - react-loadingg
