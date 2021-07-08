@@ -6,3 +6,4 @@
   - React-Icons
   - axios
   - react-loadingg
+  - firebase
