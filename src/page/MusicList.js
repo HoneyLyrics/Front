@@ -25,12 +25,12 @@ const MusicList = ({ match, songs, setSongs }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moodId]);
 
-  const songListComponent = !songs ? (
-    <div>노래없음</div>
-  ) : loading ? (
+  const songListComponent = loading ? (
     <div style={{ width: '100%', height: '489px' }}>
       <LoopCircleLoading color="#ffa500b5" />
     </div>
+  ) : !songs ? (
+    <div>노래없음</div>
   ) : (
     <SongList songs={songs} />
   );
