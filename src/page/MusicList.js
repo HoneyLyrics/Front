@@ -22,8 +22,9 @@ const MusicList = ({ match, songs, setSongs }) => {
     };
 
     getSongList();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [moodId]);
+
+    return () => setLoading(true);
+  }, [moodId, setSongs]);
 
   const songListComponent = loading ? (
     <div style={{ width: '100%', height: '489px' }}>
