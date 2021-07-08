@@ -180,6 +180,12 @@ code {
   left: 3px;
 }
 
+.no-song {
+  position: relative;
+  padding: 15.2% 0px;
+  text-align: center;
+}
+
 .detail-header {
   display: flex;
 }

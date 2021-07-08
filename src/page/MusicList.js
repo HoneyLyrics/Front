@@ -4,6 +4,7 @@ import axios from '../../node_modules/axios/index';
 import Header from '../components/Header';
 import SongList from '../components/SongList';
 import { LoopCircleLoading } from 'react-loadingg';
+import NoSong from '../components/NoSong';
 
 const MusicList = ({ match, songs, setSongs }) => {
   const moodId = match.params.moodid;
@@ -33,7 +34,7 @@ const MusicList = ({ match, songs, setSongs }) => {
       <LoopCircleLoading color="#ffa500b5" />
     </div>
   ) : !songs ? (
-    <div>노래없음</div>
+    <NoSong />
   ) : (
     <SongList songs={songs} />
   );
