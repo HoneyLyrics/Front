@@ -4,11 +4,11 @@ import moods from '../asset/moods';
 
 export const handleMoodTags = moodTags =>
   moodTags.map(tag => {
-    const mood = moods.find(m => m.id === tag);
+    const mood = moods.find(m => m.id === tag.moodId);
     return (
       <span
         key={mood.id}
-        className={mood.moodName}
+        className={mood.mood}
         style={{ borderColor: mood.color }}
       >
         {mood.moodName_kr}

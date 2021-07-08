@@ -55,7 +55,7 @@ code {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   width: 68%;
-  margin-left: 16%;
+  margin: auto;
   margin-top: 1rem;
 }
 
@@ -244,11 +244,9 @@ code {
 .song-detail .song-info-detail .song-info-detail-text .song-artist {
   font-size: 17px;
   font-weight: 300;
-  /* margin-bottom: 20%; */
 }
 
 .song-detail .song-info-detail .song-info-detail-text .mood-tags {
-  /* margin-bottom: 40%; */
   color: #424242;
   font-size: 13px;
 }
@@ -271,7 +269,6 @@ code {
   color: black;
   border: 1px solid #ffffff;
   border-radius: 4px;
-  /* background: #f7f7f7; */
   padding: 3px 5px;
   font-weight: 500;
 }
@@ -302,7 +299,7 @@ code {
 
 .fold-button {
   position: relative;
-  left: 45%;
+  left: 46.4%;
   background: white;
   border: none;
 }
@@ -317,10 +314,18 @@ code {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
   background: orange;
   font-family: 'Noto Serif KR', serif;
+}
+
+.footer .copyright {
+  margin-left: 17%;
+}
+
+.footer .footer-logo {
+  margin-left: 22.1%;
+  margin-right: 21.2%;
 }
 
 .footer .footer-logo img {

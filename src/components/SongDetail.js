@@ -7,12 +7,11 @@ import {
 } from '../util/handleSongProperties';
 import axios from '../../node_modules/axios/index';
 import apiKey from '../asset/apikey';
-// import { getYoutubeData } from '../asset/youtubeLinks';
 import YoutubeIframe from '../util/YoutubeIframe';
 import { TransverseLoading } from 'react-loadingg';
 
 const SongDetail = ({ song }) => {
-  const [{ songId, title, imgURL, singer, mood1, mood2, mood3, lyrics }] = song;
+  const [{ songId, title, imgURL, singer, moods, lyrics }] = song;
 
   const [relatedLinks, setrelatedLinks] = useState(null);
   const [fold, setFold] = useState(true);
@@ -28,7 +27,6 @@ const SongDetail = ({ song }) => {
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/search?part=id&key=${apiKey}&q=${query}&maxResults=3&type=video&videoEmbeddable=true`,
         );
-        // const response = await getYoutubeData(songId);
         setrelatedLinks(response.data.items);
       } catch (e) {
         console.log(e);
@@ -37,7 +35,7 @@ const SongDetail = ({ song }) => {
     getRelatedVideo();
   }, [singer, title]);
 
-  const moodTagList = handleMoodTags([mood1, mood2, mood3]);
+  const moodTagList = handleMoodTags(moods);
   const externalLinks = handleMelonLinks(songId);
   const lyricsWithBr = handleLyricsWithBr(lyrics);
   const RelatedVideos = relatedLinks ? (

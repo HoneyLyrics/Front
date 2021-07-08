@@ -13,7 +13,9 @@ const MusicList = ({ match, songs, setSongs }) => {
     const getSongList = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`/musiclist/?moodid=${moodId}`);
+        const response = await axios.get(
+          `https://honeylyrics.herokuapp.com/musiclist/?moodid=${moodId}`,
+        );
         setSongs(response.data);
       } catch (e) {
         console.log(e);
@@ -22,15 +24,16 @@ const MusicList = ({ match, songs, setSongs }) => {
     };
 
     getSongList();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [moodId]);
 
-  const songListComponent = !songs ? (
-    <div>노래없음</div>
-  ) : loading ? (
+    return () => setLoading(true);
+  }, [moodId, setSongs]);
+
+  const songListComponent = loading ? (
     <div style={{ width: '100%', height: '489px' }}>
       <LoopCircleLoading color="#ffa500b5" />
     </div>
+  ) : !songs ? (
+    <div>노래없음</div>
   ) : (
     <SongList songs={songs} />
   );
@@ -39,7 +42,6 @@ const MusicList = ({ match, songs, setSongs }) => {
     <div>
       <Header />
       {songListComponent}
-      {/* <SongList /> */}
     </div>
   );
 };
