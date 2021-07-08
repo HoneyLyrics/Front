@@ -12,7 +12,7 @@ import YoutubeIframe from '../util/YoutubeIframe';
 import { TransverseLoading } from 'react-loadingg';
 
 const SongDetail = ({ song }) => {
-  const [{ songId, title, imgURL, singer, mood1, mood2, mood3, lyrics }] = song;
+  const [{ songId, title, imgURL, singer, moods, lyrics }] = song;
 
   const [relatedLinks, setrelatedLinks] = useState(null);
   const [fold, setFold] = useState(true);
@@ -37,7 +37,7 @@ const SongDetail = ({ song }) => {
     getRelatedVideo();
   }, [singer, title]);
 
-  const moodTagList = handleMoodTags([mood1, mood2, mood3]);
+  const moodTagList = handleMoodTags(moods);
   const externalLinks = handleMelonLinks(songId);
   const lyricsWithBr = handleLyricsWithBr(lyrics);
   const RelatedVideos = relatedLinks ? (
