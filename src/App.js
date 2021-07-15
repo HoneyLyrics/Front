@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { Route, Switch } from 'react-router';
-import Home from './page/Home';
-import MusicDetail from './page/MusicDetail';
-import MusicList from './page/MusicList';
+import Home from './page/HomePage';
+import MusicDetail from './page/MusicDetailPage';
+import MusicList from './page/MusicListPage';
 import ScrollToTop from './util/ScrollToTop';
 import './style/app.css';
 import Footer from './components/common/Footer';
