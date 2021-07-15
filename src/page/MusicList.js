@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from '../../node_modules/axios/index';
-import Header from '../components/Header';
-import SongList from '../components/SongList';
+import Header from '../components/common/Header';
+import SongList from '../components/mood-list/SongList';
 import { LoopCircleLoading } from 'react-loadingg';
-import NoSong from '../components/NoSong';
+import NoSong from '../components/mood-list/NoSong';
 
 const MusicList = ({ match, songs, setSongs }) => {
   const moodId = match.params.moodid;
@@ -15,7 +15,8 @@ const MusicList = ({ match, songs, setSongs }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://honeylyrics.herokuapp.com/musiclist/?moodid=${moodId}`,
+          // `https://honeylyrics.herokuapp.com/musiclist/?moodid=${moodId}`,
+          `/musiclist/?moodid=${moodId}`,
         );
         setSongs(response.data);
       } catch (e) {

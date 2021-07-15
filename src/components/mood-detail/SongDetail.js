@@ -4,10 +4,10 @@ import {
   handleLyricsWithBr,
   handleMelonLinks,
   handleMoodTags,
-} from '../util/handleSongProperties';
-import axios from '../../node_modules/axios/index';
-import apiKey from '../asset/apikey';
-import YoutubeIframe from '../util/YoutubeIframe';
+} from '../../util/handleSongProperties';
+import axios from '../../../node_modules/axios/index';
+import apiKey from '../../asset/apikey';
+import YoutubeIframe from '../../util/YoutubeIframe';
 import { TransverseLoading } from 'react-loadingg';
 
 const SongDetail = ({ song }) => {

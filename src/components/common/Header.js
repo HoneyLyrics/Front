@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import honey from '../asset/honey.png';
+import honey from '../../asset/honey.png';
 
 const Header = ({ history }) => {
   return (

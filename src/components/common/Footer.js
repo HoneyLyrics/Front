@@ -1,7 +1,7 @@
 import React from 'react';
 import { CgCopyright } from 'react-icons/cg';
 import { AiOutlineGithub } from 'react-icons/ai';
-import honey from '../asset/honey.png';
+import honey from '../../asset/honey.png';
 
 const Footer = () => {
   return (

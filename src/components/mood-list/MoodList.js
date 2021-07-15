@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moods from '../asset/moods';
+import moods from '../../asset/moods';
 
 const MoodList = () => {
   return (

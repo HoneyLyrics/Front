@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { handleLyrics, handleMelonLinks } from '../util/handleSongProperties';
-import noImage from '../asset/no-image.gif';
+import {
+  handleLyrics,
+  handleMelonLinks,
+} from '../../util/handleSongProperties';
+import noImage from '../../asset/no-image.gif';
 
 const SongItem = ({ song: { songId, singer, title, lyrics, imgURL } }) => {
   const lyricsSplit = handleLyrics(lyrics);

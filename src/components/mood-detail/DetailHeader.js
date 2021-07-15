@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { withRouter } from 'react-router-dom';
-import Header from './Header';
+import Header from '../common/Header';
 
 const DetailHeader = ({ history }) => {
   return (
