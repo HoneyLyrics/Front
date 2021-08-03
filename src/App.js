@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import { Route, Switch } from 'react-router';
-import Home from './page/HomePage';
-import MusicDetail from './page/MusicDetailPage';
-import MusicList from './page/MusicListPage';
+import HomePage from './page/HomePage';
+import MusicDetailPage from './page/MusicDetailPage';
+import MusicListPage from './page/MusicListPage';
 import ScrollToTop from './util/ScrollToTop';
 import './style/app.css';
 import Footer from './components/common/Footer';
+import LoginPage from './page/LoginPage';
+import RegisterPage from './page/RegisterPage';
 
 const App = () => {
   const [songs, setSongs] = useState(null);
@@ -18,12 +20,16 @@ const App = () => {
     <div className="App">
       <ScrollToTop />
       <Switch>
-        <Route path="/" component={Home} exact />
+        <Route path="/" component={HomePage} exact />
         <Route
           path="/musiclist/:moodid"
-          render={() => <MusicList songs={songs} setSongs={onChangeSongs} />}
+          render={() => (
+            <MusicListPage songs={songs} setSongs={onChangeSongs} />
+          )}
         />
-        <Route path="/musicdetail/:songid" component={MusicDetail} />
+        <Route path="/musicdetail/:songid" component={MusicDetailPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
       </Switch>
       <Footer />
     </div>
