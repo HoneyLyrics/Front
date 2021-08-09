@@ -4,11 +4,11 @@ import { withRouter } from 'react-router-dom';
 import honey from '../../asset/honey.png';
 
 const Header = ({ history }) => {
-  // const { user } = useSelector(({ user }) => ({
-  //   user: user.user,
-  // }));
+  const { user } = useSelector(({ user }) => ({
+    user: user.user,
+  }));
 
-  const user = { user: '노현우' };
+  // const user = { user: '노현우' };
 
   return (
     <div className="header">
