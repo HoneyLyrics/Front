@@ -54,11 +54,11 @@ const initialState = {
 const auth = handleActions(
   {
     [CHANGE_FIELD]: (state, { payload: { form, key, value } }) => {
-      const changedField = { ...state[form] };
-      changeField[key] = value;
+      const tmpField = { ...state[form] };
+      tmpField[key] = value;
       return {
         ...state,
-        [form]: changedField,
+        [form]: tmpField,
       };
     },
     [INITIALIZE_FORM]: (state, { payload: form }) => ({
