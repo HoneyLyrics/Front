@@ -29,6 +29,10 @@ a {
   font-family: 'Noto Serif', serif;
 }
 
+.logo {
+  display: flex;
+}
+
 .header h1 {
   cursor: pointer;
   margin: 1rem 0;
@@ -39,6 +43,30 @@ a {
   width: 4rem;
   object-fit: contain;
   cursor: pointer;
+}
+
+.user-info {
+  position: relative;
+  left: 14rem;
+  top: 3rem;
+  font-size: 1rem;
+}
+
+.user-info > button {
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.25rem 1rem;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  /* margin-right: 1rem; */
+  background-color: #f8b400;
+}
+
+.user-info > button:hover {
+  background-color: orange;
 }
 
 .searchbar {
@@ -371,7 +399,7 @@ a {
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: #fff6e6;
+  background-color: beige;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -379,7 +407,7 @@ a {
 }
 
 .auth-template-container > .white-box {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+  box-shadow: 12px 12px 12px rgb(0 0 0 / 15%);
   padding: 2rem;
   width: 360px;
   background-color: white;
@@ -394,13 +422,8 @@ a {
   letter-spacing: 2px;
 }
 
-.auth-template-container > .white-box > .logo-area > a {
-  color: orange;
-}
-
 .auth-form-container > h3 {
   margin: 0;
-  color: #ffb226;
   margin-bottom: 1rem;
 }
 
@@ -414,7 +437,6 @@ a {
 }
 
 .auth-styled-form:focus {
-  /* color: ; */
   border-bottom: 1px solid #ffae19;
 }
 
@@ -428,12 +450,12 @@ a {
 }
 
 .auth-footer > a {
-  color: #ffce73;
+  color: #ffc459;
   text-decoration: underline;
 }
 
 .auth-footer > a:hover {
-  color: #ffaa0d;
+  color: orange;
 }
 
 .auth-form-btn {
@@ -446,10 +468,10 @@ a {
   outline: none;
   cursor: pointer;
   margin-top: 1rem;
-  background-color: limegreen;
+  background-color: orange;
 }
 .auth-form-btn:hover {
-  background-color: #7ade7a;
+  background-color: #ffc04d;
 }
 
 .fullwidth {
