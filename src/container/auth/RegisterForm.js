@@ -8,16 +8,14 @@ import {
   initializeForm,
   register,
 } from '../../modules/auth';
-import { check } from '../../modules/user';
 
 const RegisterForm = ({ history }) => {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
+  const { form, auth, authError } = useSelector(({ auth }) => ({
     form: auth.register,
     auth: auth.auth,
     authError: auth.authError,
-    user: user.user,
   }));
 
   const onChange = e => {
@@ -64,16 +62,11 @@ const RegisterForm = ({ history }) => {
     }
     if (auth) {
       console.log('회원가입 성공');
-      dispatch(check());
       dispatch(initializeAuth());
+      alert('가입이 완료되었습니다. 로그인해주세요!');
+      history.push('/login');
     }
-  }, [auth, authError, dispatch]);
-
-  useEffect(() => {
-    if (user) {
-      history.push('/');
-    }
-  }, [history, user]);
+  }, [auth, authError, dispatch, history]);
 
   return (
     <AuthForm
