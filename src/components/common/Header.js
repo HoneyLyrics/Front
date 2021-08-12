@@ -1,14 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import honey from '../../asset/honey.png';
+import { logout } from '../../modules/user';
 
 const Header = ({ history }) => {
-  const { user } = useSelector(({ user }) => ({
-    user: user.user,
-  }));
+  const dispatch = useDispatch();
+  const { user } = useSelector(({ user }) => ({ user: user.user }));
 
-  // const user = { user: '노현우' };
+  const onLogout = () => {
+    dispatch(logout());
+    console.log('로그아웃 성공');
+  };
 
   return (
     <div className="header">
@@ -18,8 +21,8 @@ const Header = ({ history }) => {
       </div>
       {user ? (
         <div className="user-info">
-          <span>{user.user}님 환영합니다!</span>
-          <button>로그아웃</button>
+          <span>{user.username}님 환영합니다!</span>
+          <button onClick={onLogout}>로그아웃</button>
         </div>
       ) : (
         <div className="user-info">
