@@ -1,52 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
+import { LoopCircleLoading } from 'react-loadingg';
+import RelateVideoContainer from '../../container/mood-detail/RelateVideoContainer';
 import {
   handleLyricsWithBr,
   handleMelonLinks,
   handleMoodTags,
 } from '../../util/handleSongProperties';
-import axios from '../../../node_modules/axios/index';
-import apiKey from '../../asset/apikey';
-import YoutubeIframe from '../../util/YoutubeIframe';
-import { TransverseLoading } from 'react-loadingg';
 
 const SongDetail = ({ song }) => {
-  const [{ songId, title, imgURL, singer, moods, lyrics }] = song;
-
-  const [relatedLinks, setrelatedLinks] = useState(null);
   const [fold, setFold] = useState(true);
+
+  if (!song) {
+    return (
+      <div style={{ width: '100%', height: '540px' }}>
+        <LoopCircleLoading color="#ffa500b5" />
+      </div>
+    );
+  }
 
   const handleFoldClick = () => {
     setFold(fold => !fold);
   };
 
-  useEffect(() => {
-    const getRelatedVideo = async () => {
-      try {
-        const query = `${singer} ${title}`;
-        const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=id&key=${apiKey}&q=${query}&maxResults=3&type=video&videoEmbeddable=true`,
-        );
-        setrelatedLinks(response.data.items);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    getRelatedVideo();
-  }, [singer, title]);
-
+  const { songId, title, imgURL, singer, moods, lyrics } = song;
   const moodTagList = handleMoodTags(moods);
   const externalLinks = handleMelonLinks(songId);
   const lyricsWithBr = handleLyricsWithBr(lyrics);
-  const RelatedVideos = relatedLinks ? (
-    relatedLinks.map(link => (
-      <YoutubeIframe key={link.id.videoId} youtubeLink={link.id.videoId} />
-    ))
-  ) : (
-    <div>
-      <TransverseLoading color="red" style={{ position: 'none' }} />
-    </div>
-  );
 
   return (
     <div className="song-detail">
@@ -61,11 +41,7 @@ const SongDetail = ({ song }) => {
         </div>
       </div>
       <br />
-      <div className="related-video">
-        <hr />
-        <h3>관련 동영상</h3>
-        <div className="video-tags">{RelatedVideos}</div>
-      </div>
+      <RelateVideoContainer singer={singer} title={title} />
       <br />
       <hr />
       <h3>가사</h3>
