@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { LoopCircleLoading } from 'react-loadingg';
-import NoSong from '../../components/mood-list/NoSong';
 import { listSongs } from '../../modules/songs';
-import SongItem from '../../components/mood-list/SongItem';
+import SongList from '../../components/mood-list/SongList';
 
 const SongListContainer = ({ moodId }) => {
   const dispatch = useDispatch();
@@ -21,23 +19,7 @@ const SongListContainer = ({ moodId }) => {
     }
   }, [dispatch, songs, moodId]);
 
-  return (
-    <>
-      {loading ? (
-        <div style={{ width: '100%', height: '489px' }}>
-          <LoopCircleLoading color="#ffa500b5" />
-        </div>
-      ) : !moodSongs ? (
-        <NoSong />
-      ) : (
-        <div className="song-list">
-          {moodSongs.map(song => (
-            <SongItem key={song.songId} song={song} />
-          ))}
-        </div>
-      )}
-    </>
-  );
+  return <SongList songs={moodSongs} loading={loading} />;
 };
 
 export default withRouter(SongListContainer);
