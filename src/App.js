@@ -4,8 +4,6 @@ import HomePage from './page/HomePage';
 import MusicDetailPage from './page/MusicDetailPage';
 import MusicListPage from './page/MusicListPage';
 import ScrollToTop from './util/ScrollToTop';
-import './style/app.css';
-import Footer from './components/common/Footer';
 import LoginPage from './page/LoginPage';
 import RegisterPage from './page/RegisterPage';
 
@@ -20,7 +18,6 @@ const App = () => {
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
       </Switch>
-      <Footer />
     </div>
   );
 };
