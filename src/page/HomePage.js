@@ -1,13 +1,15 @@
 import React from 'react';
-import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 import MoodList from '../components/mood-list/MoodList';
+import HeaderContiner from '../container/common/HeaderContiner';
 
 const Home = () => {
   return (
-    <div>
-      <Header />
+    <>
+      <HeaderContiner />
       <MoodList />
-    </div>
+      <Footer />
+    </>
   );
 };
 
