@@ -99,8 +99,13 @@ const Footer = () => {
           </a>
         </ProjectRepo>
         <Developers>
-          {developers.map(developer => (
-            <a href={developer.repoUrl} target="_blank" rel="noreferrer">
+          {developers.map((developer, index) => (
+            <a
+              href={developer.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              key={index}
+            >
               <span>{developer.name}</span>
               <IoMdOpen />
             </a>
