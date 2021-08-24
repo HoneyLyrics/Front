@@ -116,11 +116,11 @@ const Header = ({ user, onLogout }) => {
         <UserInfoMobile>
           {user ? (
             <>
-              <Button onClick={onLogout}>로그아웃</Button>
+              <Button onClick={onLogout}>❌</Button>
             </>
           ) : (
             <>
-              <Button to="/login">로그인</Button>
+              <Button to="/login">🔐</Button>
             </>
           )}
         </UserInfoMobile>
