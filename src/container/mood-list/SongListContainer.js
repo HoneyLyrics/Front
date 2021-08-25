@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { listSongs } from '../../modules/songs';
 import SongList from '../../components/mood-list/SongList';
@@ -22,4 +21,4 @@ const SongListContainer = ({ moodId }) => {
   return <SongList songs={moodSongs} loading={loading} />;
 };
 
-export default withRouter(SongListContainer);
+export default SongListContainer;

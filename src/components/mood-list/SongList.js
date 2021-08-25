@@ -1,27 +1,65 @@
 import React from 'react';
 import SongItem from './SongItem';
 import { LoopCircleLoading } from 'react-loadingg';
-import NoSong from '../mood-list/NoSong';
+import styled from 'styled-components';
+import LoadingWrapper from '../common/LoadingWrapper';
+import { Link } from 'react-router-dom';
+
+const SongListBlock = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 7rem;
+
+  @media (max-width: 1280px) {
+    margin-top: 7rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 5rem;
+  }
+`;
+
+const NoSong = styled.div`
+  width: 100%;
+  height: calc(100vh - 9.0625rem);
+  padding-top: 15rem;
+  text-align: center;
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #868e96;
+  }
+`;
 
 const SongList = ({ songs, loading }) => {
   if (loading) {
     return (
-      <div style={{ width: '100%', height: '489px' }}>
+      <LoadingWrapper>
         <LoopCircleLoading color="#ffa500b5" />
-      </div>
+      </LoadingWrapper>
     );
   }
 
   if (!songs) {
-    return <NoSong />;
+    return (
+      <NoSong>
+        <p>검색된 노래가 없습니다.</p>
+        <br />
+        <Link to="/">홈으로</Link>
+      </NoSong>
+    );
   }
 
   return (
-    <div className="song-list">
+    <SongListBlock>
       {songs.map(song => (
         <SongItem key={song.songId} song={song} />
       ))}
-    </div>
+    </SongListBlock>
   );
 };
 
