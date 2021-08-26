@@ -1,14 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import DetailHeader from '../components/mood-detail/DetailHeader';
+import Footer from '../components/common/Footer';
+import Header from '../components/common/Header';
 import SongDetailContainer from '../container/mood-detail/SongDetailContainer';
 
 const MusicDetail = ({ match }) => {
   return (
-    <div>
-      <DetailHeader />
+    <>
+      <Header detail />
       <SongDetailContainer songId={match.params.songid} />
-    </div>
+      <Footer />
+    </>
   );
 };
 
