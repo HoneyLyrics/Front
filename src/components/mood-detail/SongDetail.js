@@ -9,6 +9,7 @@ import {
   handleMoodTags,
 } from '../../util/handleSongProperties';
 import LoadingWrapper from '../common/LoadingWrapper';
+import NoData from '../common/NoData';
 
 const SongDetail = ({ song, loading }) => {
   const [fold, setFold] = useState(true);
@@ -19,6 +20,10 @@ const SongDetail = ({ song, loading }) => {
         <LoopCircleLoading color="#ffa500b5" />
       </LoadingWrapper>
     );
+  }
+
+  if (!song) {
+    return <NoData str="잘못된 노래정보입니다." />;
   }
 
   const handleFoldClick = () => {
