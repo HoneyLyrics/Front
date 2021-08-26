@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
 import { LoopCircleLoading } from 'react-loadingg';
+import styled from 'styled-components';
 import RelateVideoContainer from '../../container/mood-detail/RelateVideoContainer';
 import {
   handleLyricsWithBr,
   handleMelonLinks,
   handleMoodTags,
 } from '../../util/handleSongProperties';
+import LoadingWrapper from '../common/LoadingWrapper';
 
-const SongDetail = ({ song }) => {
+const SongDetail = ({ song, loading }) => {
   const [fold, setFold] = useState(true);
 
-  if (!song) {
+  if (loading) {
     return (
-      <div style={{ width: '100%', height: '540px' }}>
+      <LoadingWrapper>
         <LoopCircleLoading color="#ffa500b5" />
-      </div>
+      </LoadingWrapper>
     );
   }
 
