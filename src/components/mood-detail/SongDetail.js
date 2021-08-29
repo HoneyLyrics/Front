@@ -63,7 +63,7 @@ const SongDetail = ({ song, loading }) => {
         singer={singer}
       />
       <h3>관련 동영상</h3>
-      {/* <RelateVideoContainer singer={singer} title={title} /> */}
+      <RelateVideoContainer singer={singer} title={title} />
       <h3>가사</h3>
       <LyricsInfo lyrics={lyrics} />
     </SongDetailBlock>
