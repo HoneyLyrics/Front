@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
-import { handleLyricsWithBr } from '../../util/handleSongProperties';
+import { handleLyricsWithBr } from '../../util/HandleSongPropertyComponents';
 
 const LyricsInfoBlock = styled.div`
   .lyrics-on {

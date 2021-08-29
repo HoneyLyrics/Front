@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   handleMelonLinks,
   handleMoodTags,
-} from '../../util/handleSongProperties';
+} from '../../util/HandleSongPropertyComponents';
 
 const SongInfoDetailBlock = styled.div`
   height: 38vw;

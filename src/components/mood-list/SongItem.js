@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   handleLyrics,
   handleMelonLinks,
-} from '../../util/handleSongProperties';
+} from '../../util/HandleSongPropertyComponents';
 import noImage from '../../asset/no-image.gif';
 import styled from 'styled-components';
 
