@@ -1,19 +1,43 @@
-import React, { useState } from 'react';
-import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
+import React from 'react';
 import { LoopCircleLoading } from 'react-loadingg';
 import styled from 'styled-components';
 import RelateVideoContainer from '../../container/mood-detail/RelateVideoContainer';
-import {
-  handleLyricsWithBr,
-  handleMelonLinks,
-  handleMoodTags,
-} from '../../util/handleSongProperties';
+
 import LoadingWrapper from '../common/LoadingWrapper';
 import NoData from '../common/NoData';
+import LyricsInfo from './LyricsInfo';
+import SongInfoDetail from './SongInfoDetail';
+
+const SongDetailBlock = styled.div`
+  margin: 7rem auto 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 1024px;
+
+  h3 {
+    margin-top: 3rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: calc(100% - 6rem);
+
+    h3 {
+      padding-left: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: calc(100% - 1rem);
+  }
+`;
 
 const SongDetail = ({ song, loading }) => {
-  const [fold, setFold] = useState(true);
-
   if (loading) {
     return (
       <LoadingWrapper>
@@ -26,51 +50,23 @@ const SongDetail = ({ song, loading }) => {
     return <NoData str="잘못된 노래정보입니다." />;
   }
 
-  const handleFoldClick = () => {
-    setFold(fold => !fold);
-  };
-
   const { songId, title, imgURL, singer, moods, lyrics } = song;
-  const moodTagList = handleMoodTags(moods);
-  const externalLinks = handleMelonLinks(songId);
-  const lyricsWithBr = handleLyricsWithBr(lyrics);
 
   return (
-    <div className="song-detail">
+    <SongDetailBlock>
       <h3>곡 정보</h3>
-      <div className="song-info-detail">
-        <img src={imgURL} alt="song_cover" />
-        <div className="song-info-detail-text">
-          <span className="song-title">{title}</span>
-          <span className="song-artist">{singer}</span>
-          <span className="mood-tags">{moodTagList}</span>
-          <span className="external-link">{externalLinks}</span>
-        </div>
-      </div>
-      <br />
-      <RelateVideoContainer singer={singer} title={title} />
-      <br />
-      <hr />
+      <SongInfoDetail
+        moods={moods}
+        songId={songId}
+        imgURL={imgURL}
+        title={title}
+        singer={singer}
+      />
+      <h3>관련 동영상</h3>
+      {/* <RelateVideoContainer singer={singer} title={title} /> */}
       <h3>가사</h3>
-      <div className="lyrics-info">
-        <div className={`song-lyrics ${fold ? '' : 'lyrics-on'}`}>
-          {lyricsWithBr}
-        </div>
-        <button className="fold-button" onClick={handleFoldClick}>
-          {fold ? (
-            <>
-              <span>더보기</span>
-              <AiOutlineDown />
-            </>
-          ) : (
-            <>
-              <span>접기</span>
-              <AiOutlineUp />
-            </>
-          )}
-        </button>
-      </div>
-    </div>
+      <LyricsInfo lyrics={lyrics} />
+    </SongDetailBlock>
   );
 };
 
