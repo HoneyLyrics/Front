@@ -4,23 +4,28 @@ import styled from 'styled-components';
 import moods from '../../asset/moods';
 
 const MoodListBlock = styled.div`
-  margin: 0 12vw;
+  margin: 0 calc((100% - 60rem) / 2.5);
   margin-top: 7rem;
   font-family: 'Noto Serif KR', serif;
 
-  @media (max-width: 1280px) {
-    margin: 0 6vw;
+  @media (max-width: 1024px) {
+    margin: 0 calc((100% - 40rem) / 5);
     margin-top: 7rem;
   }
 
-  @media (max-width: 1024px) {
-    margin: 0 10vw;
+  @media (max-width: 768px) {
+    margin: 0 calc((100% - 28.5rem) / 4);
+    margin-top: 7rem;
+  }
+
+  @media (max-width: 512px) {
+    margin: 0 calc((100% - 19rem) / 4);
     margin-top: 5rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 376px) {
     margin: 0;
-    margin-top: 5rem;
+    margin-top: 7rem;
   }
 `;
 
