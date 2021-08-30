@@ -115,6 +115,10 @@ const UserInfoMobile = styled.div`
       font-size: 0.875rem;
       padding: 0.375rem 0.4375rem;
     }
+    button {
+      font-size: 0.875rem;
+      padding: 0.375rem 0.4375rem;
+    }
   }
 `;
 
