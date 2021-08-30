@@ -98,6 +98,10 @@ const Tags = styled.span`
     span {
       padding: 3px;
     }
+
+    span:last-child {
+      display: none;
+    }
   }
 `;
 

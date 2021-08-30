@@ -25,7 +25,7 @@ const MoodListBlock = styled.div`
 
   @media (max-width: 376px) {
     margin: 0;
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
 `;
 
