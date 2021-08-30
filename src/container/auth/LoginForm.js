@@ -45,7 +45,7 @@ const LoginForm = ({ history }) => {
     if (authError) {
       console.log('로그인 에러');
       console.log(authError);
-      setError('로그인 실패');
+      setError('아이디 혹은 비밀번호가 일치하지 않습니다.');
       return;
     }
     if (auth) {
