@@ -12,22 +12,29 @@ const FooterBlock = styled.div`
   margin-top: 3.125rem;
   font-family: 'Noto Serif KR', serif;
   display: flex;
-  flex-direction: row;
   align-items: center;
   background: orange;
 `;
 
 const CopyRight = styled.div`
   position: absolute;
-  left: 20vh;
+  left: calc((100% - 60rem) / 2.5 + 2rem);
 
-  @media (max-width: 1280px) {
-    left: 10vh;
+  @media (max-width: 1024px) {
+    left: calc((100% - 40rem) / 5 + 2rem);
   }
 
   @media (max-width: 768px) {
-    left: 7vh;
+    left: calc((100% - 28.5rem) / 4 + 2rem);
     font-size: 0.875rem;
+
+    span:last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 512px) {
+    left: calc((100% - 19rem) / 4 + 2rem);
   }
 
   @media (max-width: 376px) {
@@ -46,20 +53,34 @@ const FooterLogo = styled.div`
 
 const ContactUs = styled.div`
   position: absolute;
-  right: 10vh;
+  right: calc((100% - 60rem) / 2.5);
 
-  @media (max-width: 1280px) {
-    right: 3vh;
+  @media (max-width: 1024px) {
+    right: calc((100% - 40rem) / 5);
   }
 
-  @media (max-width: 376px) {
+  @media (max-width: 768px) {
+    right: calc((100% - 28.5rem) / 4 + 2rem);
+  }
+
+  @media (max-width: 512px) {
+    right: calc((100% - 19rem) / 4 + 2rem);
+  }
+
+  /* @media (max-width: 376px) {
     display: none;
-  }
+  } */
 `;
 
 const ProjectRepo = styled.div`
   &:hover {
     color: #495057;
+  }
+
+  @media (max-width: 512px) {
+    span {
+      display: none;
+    }
   }
 `;
 
@@ -95,7 +116,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <GoMarkGithub /> &nbsp; Our Repos
+            <GoMarkGithub /> &nbsp; <span>Our Repos</span>
           </a>
         </ProjectRepo>
         <Developers>
