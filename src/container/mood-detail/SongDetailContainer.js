@@ -6,15 +6,16 @@ import { getSong } from '../../modules/song';
 
 const MusicDetail = ({ songId }) => {
   const dispatch = useDispatch();
-  const { song } = useSelector(({ song }) => ({
+  const { song, loading } = useSelector(({ song, loading }) => ({
     song: song.song,
+    loading: loading['song/GET_SONG'],
   }));
 
   useEffect(() => {
     dispatch(getSong(songId));
   }, [dispatch, songId]);
 
-  return <SongDetail song={song} />;
+  return <SongDetail song={song} loading={loading} />;
 };
 
 export default withRouter(MusicDetail);

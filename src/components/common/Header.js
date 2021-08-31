@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { BiArrowBack } from 'react-icons/bi';
 import styled from 'styled-components';
 import honey from '../../asset/honey.png';
 import Button from './Button';
@@ -91,9 +92,28 @@ const UserInfoMobile = styled.div`
   }
 `;
 
-const Header = ({ user, onLogout }) => {
+const GoBackBtn = styled.div`
+  position: absolute;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    margin: 1vw;
+  }
+`;
+
+const Header = ({ user, onLogout, detail }) => {
+  const history = useHistory();
   return (
     <HeaderBlock>
+      {detail && (
+        <GoBackBtn onClick={history.goBack}>
+          <BiArrowBack />
+        </GoBackBtn>
+      )}
       <Wrapper>
         <Logo to="/">
           <img src={honey} alt="logo" />

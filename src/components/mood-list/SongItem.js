@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import {
   handleLyrics,
   handleMelonLinks,
-} from '../../util/handleSongProperties';
+} from '../../util/HandleSongPropertyComponents';
 import noImage from '../../asset/no-image.gif';
 import styled from 'styled-components';
 
 const SongItemBlock = styled.div`
-  width: 634px;
+  width: 628px;
   height: 232px;
   margin-top: 1.25rem;
   margin-right: 1rem;
@@ -53,7 +53,7 @@ const Thumbnail = styled.div`
 `;
 
 const SongInfo = styled.div`
-  width: 322px;
+  width: 316px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

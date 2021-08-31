@@ -22,9 +22,7 @@ export const handleMelonLinks = songId => (
     target="_blank"
     rel="noreferrer"
   >
-    <span className="external-link-anchor-icon">
-      <img src={melon} alt="melon-logo" className="melon" />
-    </span>
+    <img src={melon} alt="melon-logo" className="melon" />
     <span className="external-link-anchor-text">Melon</span>
   </a>
 );

@@ -1,13 +1,47 @@
 import React from 'react';
 import { TransverseLoading } from 'react-loadingg';
-import YoutubeIframe from '../../util/YoutubeIframe';
+import styled from 'styled-components';
+import YoutubeIframe from './YoutubeIframe';
+
+const RelateVideoBlock = styled.div``;
+
+const VideoTags = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    iframe {
+      width: 240px;
+      height: 160px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    iframe {
+      width: 180px;
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+
+    iframe {
+      width: 300px;
+      height: 200px;
+    }
+
+    iframe + iframe {
+      margin-top: 1rem;
+    }
+  }
+`;
 
 const RelateVideo = ({ youtubeVideos }) => {
   return (
-    <div className="related-video">
-      <hr />
-      <h3>관련 동영상</h3>
-      <div className="video-tags">
+    <RelateVideoBlock className="related-video">
+      <VideoTags>
         {youtubeVideos ? (
           youtubeVideos.map(link => (
             <YoutubeIframe
@@ -16,12 +50,10 @@ const RelateVideo = ({ youtubeVideos }) => {
             />
           ))
         ) : (
-          <div>
-            <TransverseLoading color="red" style={{ position: 'none' }} />
-          </div>
+          <TransverseLoading color="red" style={{ position: 'none' }} />
         )}
-      </div>
-    </div>
+      </VideoTags>
+    </RelateVideoBlock>
   );
 };
 
