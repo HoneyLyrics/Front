@@ -1,13 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from '../components/common/Footer';
-import Header from '../components/common/Header';
 import SongListContainer from '../container/mood-list/SongListContainer';
+import HeaderContiner from '../container/common/HeaderContiner';
 
 const MusicList = ({ match }) => {
   return (
     <>
-      <Header />
+      <HeaderContiner />
       <SongListContainer moodId={match.params.moodid} />
       <Footer />
     </>

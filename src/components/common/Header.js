@@ -20,14 +20,11 @@ const Wrapper = styled(Responsive)`
 `;
 
 const Logo = styled(Link)`
+  width: 476px;
+  margin: 0 auto;
   display: flex;
-  position: absolute;
-  width: 39%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -36%);
   cursor: pointer;
-  font-size: 2.75rem;
+  font-size: 3.75rem;
 
   img {
     width: 3.5rem;
@@ -40,23 +37,44 @@ const Logo = styled(Link)`
   }
 
   @media (max-width: 1024px) {
-    width: 60%;
+    margin-top: 0.75rem;
+    width: 410px;
+    font-size: 3.125rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 6.4vw;
-    width: 75vw;
-    position: static;
-    margin: 0 auto;
     margin-top: 1rem;
-    transform: none;
+    width: 369px;
+    font-size: 2.75rem;
+  }
+
+  @media (max-width: 512px) {
+    margin-top: 1rem;
+    width: 271px;
+    font-size: 2.125rem;
 
     img {
-      width: 6vw;
+      width: 2.25rem;
+      margin-top: 0.5rem;
     }
 
     p {
-      margin-left: 1vh;
+      margin-left: 0.5rem;
+    }
+  }
+
+  @media (max-width: 376px) {
+    margin-top: 1.25rem;
+    width: 237px;
+    font-size: 1.875rem;
+
+    img {
+      width: 2rem;
+      margin-top: 0.25rem;
+    }
+
+    p {
+      margin-left: 0.25rem;
     }
   }
 `;
@@ -84,24 +102,58 @@ const UserInfo = styled.div`
 
 const UserInfoMobile = styled.div`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 90%;
+  right: calc((100% - 2rem) / 10);
 
   @media (min-width: 769px) {
     display: none;
+  }
+
+  @media (max-width: 515px) {
+    top: 75%;
+    a {
+      font-size: 0.875rem;
+      padding: 0.375rem 0.4375rem;
+    }
+    button {
+      font-size: 0.875rem;
+      padding: 0.375rem 0.4375rem;
+    }
   }
 `;
 
 const GoBackBtn = styled.div`
   position: absolute;
   cursor: pointer;
-  width: 4rem;
-  height: 4rem;
 
   svg {
     width: 32px;
     height: 32px;
     margin: 1vw;
+  }
+
+  @media (max-width: 512px) {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 376px) {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+`;
+
+const HeaderBtn = styled(Button)`
+  background: none;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+    background: none;
   }
 `;
 
@@ -124,12 +176,12 @@ const Header = ({ user, onLogout, detail }) => {
             <>
               <span id="username">{user.username}</span>
               <span id="sir">님</span>
-              <Button onClick={onLogout}>로그아웃</Button>
+              <HeaderBtn onClick={onLogout}>로그아웃</HeaderBtn>
             </>
           ) : (
             <>
-              <Button to="/login">로그인</Button>
-              <Button to="/register">회원가입</Button>
+              <HeaderBtn to="/login">로그인</HeaderBtn>
+              <HeaderBtn to="/register">회원가입</HeaderBtn>
             </>
           )}
         </UserInfo>
