@@ -7,5 +7,7 @@
   - axios
   - react-loadingg
   - firebase
+  - Redux
+  - Redux Saga
 
 - 배포 주소: https://honey-lyrics.web.app/

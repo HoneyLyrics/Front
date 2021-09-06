@@ -22,9 +22,7 @@ export const handleMelonLinks = songId => (
     target="_blank"
     rel="noreferrer"
   >
-    <span className="external-link-anchor-icon">
-      <img src={melon} alt="melon-logo" className="melon" />
-    </span>
+    <img src={melon} alt="melon-logo" className="melon" />
     <span className="external-link-anchor-text">Melon</span>
   </a>
 );
@@ -40,10 +38,10 @@ export const handleLyricsWithBr = lyrics =>
 export const handleLyrics = lyrics =>
   lyrics
     .split('\n')
-    .slice(0, 6)
+    .slice(0, 3)
     .map((lyric, index) => (
       <React.Fragment key={index}>
-        {lyric}&nbsp;&nbsp;&nbsp;
-        {index % 2 === 1 && index !== 5 ? <br /> : ''}
+        {lyric}
+        {index !== 2 ? <br /> : ''}
       </React.Fragment>
     ));

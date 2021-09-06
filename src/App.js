@@ -1,31 +1,23 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router';
-import Home from './page/Home';
-import MusicDetail from './page/MusicDetail';
-import MusicList from './page/MusicList';
+import HomePage from './page/HomePage';
+import MusicDetailPage from './page/MusicDetailPage';
+import MusicListPage from './page/MusicListPage';
 import ScrollToTop from './util/ScrollToTop';
-import './style/app.css';
-import Footer from './components/Footer';
+import LoginPage from './page/LoginPage';
+import RegisterPage from './page/RegisterPage';
 
 const App = () => {
-  const [songs, setSongs] = useState(null);
-
-  const onChangeSongs = useCallback(data => {
-    setSongs(data);
-  }, []);
-
   return (
     <div className="App">
       <ScrollToTop />
       <Switch>
-        <Route path="/" component={Home} exact />
-        <Route
-          path="/musiclist/:moodid"
-          render={() => <MusicList songs={songs} setSongs={onChangeSongs} />}
-        />
-        <Route path="/musicdetail/:songid" component={MusicDetail} />
+        <Route path="/" component={HomePage} exact />
+        <Route path="/musiclist/:moodid" component={MusicListPage} />
+        <Route path="/musicdetail/:songid" component={MusicDetailPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
       </Switch>
-      <Footer />
     </div>
   );
 };

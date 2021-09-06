@@ -31,7 +31,7 @@ const moods = [
   },
   {
     id: 5,
-    moodName_kr: '스트레스받는',
+    moodName_kr: '스트레스',
     moodName: 'stressful',
     color: 'Sienna',
   },
