@@ -14,15 +14,25 @@ export const check = createAction(CHECK);
 export const logout = createAction(LOGOUT);
 
 const checkSaga = createRequestSaga(CHECK, authAPI.check);
+
+function checkFailureSaga() {
+  try {
+    localStorage.removeItem('honeylyrics_user');
+  } catch (e) {
+    console.log('로컬스토리지에서 유저정보 삭제 실패');
+  }
+}
 function* logoutSaga() {
   try {
     yield call(authAPI.logout);
+    localStorage.removeItem('honeylyrics_user');
   } catch (e) {
     console.log(e);
   }
 }
 export function* userSaga() {
   yield takeLatest(CHECK, checkSaga);
+  yield takeLatest(CHECK_FAILURE, checkFailureSaga);
   yield takeLatest(LOGOUT, logoutSaga);
 }
 

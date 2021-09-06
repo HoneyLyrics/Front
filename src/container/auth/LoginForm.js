@@ -58,6 +58,11 @@ const LoginForm = ({ history }) => {
   useEffect(() => {
     if (user) {
       history.push('/');
+      try {
+        localStorage.setItem('honeylyrics_user', JSON.stringify(user));
+      } catch (e) {
+        console.log('로컬스토리지에 유저정보를 저장할 수 없습니다.');
+      }
     }
   }, [history, user]);
 
