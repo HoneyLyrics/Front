@@ -1,11 +1,13 @@
 import client from './client';
 import apiKey from '../../asset/apikey';
 
-// `https://honeylyrics.herokuapp.com/musiclist/?moodid=${moodId}`
-export const song = songId => client.get(`/song/?songid=${songId}`);
+export const song = songId =>
+  client.get(`https://honeylyrics.herokuapp.com/song/?songid=${songId}`);
+// export const song = songId => client.get(`/song/?songid=${songId}`);
 
-// `https://honeylyrics.herokuapp.com/song/?songid=${match.params.songid}`
-export const songs = moodId => client.get(`/musiclist/?moodid=${moodId}`);
+export const songs = moodId =>
+  client.get(`https://honeylyrics.herokuapp.com/musiclist/?moodid=${moodId}`);
+// export const songs = moodId => client.get(`/musiclist/?moodid=${moodId}`);
 
 export const youtubes = ({ singer, title }) =>
   client.get(
