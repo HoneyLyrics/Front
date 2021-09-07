@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { handleMelonLinks } from '../../util/HandleSongPropertyComponents';
+import MelonLink from '../common/MelonLink';
 
 const ExternalLinkBlock = styled.div`
   width: 80px;
@@ -9,20 +9,6 @@ const ExternalLinkBlock = styled.div`
   justify-content: center;
   align-items: flex-start;
   font-family: 'Noto Sans', sans-serif;
-
-  .melon {
-    color: #00cd3b;
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  .youtube {
-    color: #ff0000;
-  }
-
-  .spotify {
-    color: #1ed760;
-  }
 
   @media (max-width: 768px) {
     width: 68px;
@@ -36,9 +22,11 @@ const ExternalLinkBlock = styled.div`
   }
 `;
 const ExternalLink = ({ songId }) => {
-  const externalLinks = handleMelonLinks(songId);
-
-  return <ExternalLinkBlock>{externalLinks}</ExternalLinkBlock>;
+  return (
+    <ExternalLinkBlock>
+      <MelonLink songId={songId} />
+    </ExternalLinkBlock>
+  );
 };
 
 export default ExternalLink;

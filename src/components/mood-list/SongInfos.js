@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { handleLyrics } from '../../util/HandleSongPropertyComponents';
 
 const SongInfosBlock = styled.div`
   width: 316px;
@@ -53,7 +52,15 @@ const SongLyrics = styled.span`
   }
 `;
 const SongInfos = ({ singer, title, lyrics }) => {
-  const lyricsSplit = handleLyrics(lyrics);
+  const lyricsSplit = lyrics
+    .split('\n')
+    .slice(0, 3)
+    .map((lyric, index) => (
+      <React.Fragment key={index}>
+        {lyric}
+        {index !== 2 ? <br /> : ''}
+      </React.Fragment>
+    ));
 
   return (
     <SongInfosBlock>

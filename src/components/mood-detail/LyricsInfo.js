@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
-import { handleLyricsWithBr } from '../../util/HandleSongPropertyComponents';
 
 const LyricsInfoBlock = styled.div`
   .lyrics-on {
@@ -35,7 +34,14 @@ const LyricsInfo = ({ lyrics }) => {
   const handleFoldClick = () => {
     setFold(fold => !fold);
   };
-  const lyricsWithBr = handleLyricsWithBr(lyrics);
+
+  const lyricsWithBr = lyrics.split('\n').map((lyric, index) => (
+    <React.Fragment key={index}>
+      {lyric}
+      <br />
+    </React.Fragment>
+  ));
+
   return (
     <LyricsInfoBlock>
       <SongLyrics className={`${fold ? '' : 'lyrics-on'}`}>

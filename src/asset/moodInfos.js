@@ -1,4 +1,4 @@
-const moods = [
+const moodInfos = [
   {
     id: 0,
     moodName_kr: '행복한',
@@ -151,4 +151,4 @@ const moods = [
   },
 ];
 
-export default moods;
+export default moodInfos;

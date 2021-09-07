@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  handleMelonLinks,
-  handleMoodTags,
-} from '../../util/HandleSongPropertyComponents';
+import MelonLink from '../common/MelonLink';
+import moodInfos from '../../asset/moodInfos';
 
 const SongInfoDetailBlock = styled.div`
   height: 38vw;
@@ -138,8 +136,18 @@ const Links = styled.span`
 `;
 
 const SongInfoDetail = ({ moods, songId, imgURL, title, singer }) => {
-  const moodTagList = handleMoodTags(moods);
-  const externalLinks = handleMelonLinks(songId);
+  const moodTagList = moods.map(tag => {
+    const mood = moodInfos.find(m => m.id === tag.moodId);
+    return (
+      <span
+        key={mood.id}
+        className={mood.mood}
+        style={{ borderColor: mood.color }}
+      >
+        {mood.moodName_kr}
+      </span>
+    );
+  });
 
   return (
     <SongInfoDetailBlock>
@@ -148,7 +156,9 @@ const SongInfoDetail = ({ moods, songId, imgURL, title, singer }) => {
         <Title>{title}</Title>
         <Artist>{singer}</Artist>
         <Tags>{moodTagList}</Tags>
-        <Links>{externalLinks}</Links>
+        <Links>
+          <MelonLink songId={songId} />
+        </Links>
       </SongInfoText>
     </SongInfoDetailBlock>
   );

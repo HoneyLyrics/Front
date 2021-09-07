@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import moods from '../../asset/moods';
+import moodInfos from '../../asset/moodInfos';
 
 const MoodListBlock = styled.div`
   margin: 0 calc((100% - 60rem) / 2.5);
@@ -102,7 +102,7 @@ const MoodList = () => {
   return (
     <MoodListBlock>
       <Wrapper>
-        {moods.map(mood => (
+        {moodInfos.map(mood => (
           <Link key={mood.id} to={`/musiclist/${mood.id}`}>
             <MoodItem color={mood.color}>
               <MoodName>{mood.moodName_kr}</MoodName>
