@@ -36,7 +36,7 @@ export function* userSaga() {
   yield takeLatest(LOGOUT, logoutSaga);
 }
 
-const initialStata = {
+const initialState = {
   user: null,
   checkError: null,
 };
@@ -61,5 +61,5 @@ export default handleActions(
       user: null,
     }),
   },
-  initialStata,
+  initialState,
 );
