@@ -8,6 +8,7 @@
   - react-loadingg
   - firebase
   - Redux
-  - Redux Saga
+  - Redux-Saga
+  - Styled-Components
 
 - 배포 주소: https://honey-lyrics.web.app/
