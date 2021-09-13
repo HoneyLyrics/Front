@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import MelonLink from '../common/MelonLink';
 import moodInfos from '../../asset/moodInfos';
+import AdditionFeaturesDetail from './AdditionFeaturesDetail';
 
 const SongInfoDetailBlock = styled.div`
   height: 38vw;
@@ -103,38 +103,6 @@ const Tags = styled.span`
   }
 `;
 
-const Links = styled.span`
-  display: flex;
-  justify-content: flex-start;
-
-  a {
-    color: black;
-    font-weight: 500;
-  }
-
-  img {
-    width: 20px;
-    height: 20px;
-  }
-
-  @media (max-width: 768px) {
-    a > span {
-      font-size: 0.875rem;
-    }
-  }
-
-  @media (max-width: 550px) {
-    a > span {
-      font-size: 0.5rem;
-    }
-
-    img {
-      width: 15px;
-      height: 15px;
-    }
-  }
-`;
-
 const SongInfoDetail = ({ moods, songId, imgURL, title, singer }) => {
   const moodTagList = moods.map(tag => {
     const mood = moodInfos.find(m => m.id === tag.moodId);
@@ -156,9 +124,7 @@ const SongInfoDetail = ({ moods, songId, imgURL, title, singer }) => {
         <Title>{title}</Title>
         <Artist>{singer}</Artist>
         <Tags>{moodTagList}</Tags>
-        <Links>
-          <MelonLink songId={songId} />
-        </Links>
+        <AdditionFeaturesDetail songId={songId} />
       </SongInfoText>
     </SongInfoDetailBlock>
   );
