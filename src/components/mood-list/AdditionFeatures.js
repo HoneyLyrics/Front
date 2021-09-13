@@ -41,9 +41,23 @@ const AdditionFeaturesBlock = styled.div`
 `;
 
 const AdditionBtn = styled.div`
+  &:first-child {
+    padding-top: 2px;
+  }
+
+  &:nth-child(2) {
+    padding-top: 1px;
+  }
+
   svg {
     width: 25px;
     height: 25px;
+  }
+
+  @media (max-width: 480px) {
+    &:first-child {
+      padding-top: 0;
+    }
   }
 `;
 
