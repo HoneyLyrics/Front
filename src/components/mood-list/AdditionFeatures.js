@@ -36,14 +36,7 @@ const AdditionFeaturesBlock = styled.div`
   }
 `;
 
-const LikeBtn = styled.div`
-  svg {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
-const AddPlaylistBtn = styled.div`
+const AdditionBtn = styled.div`
   svg {
     width: 25px;
     height: 25px;
@@ -64,12 +57,12 @@ const AdditionFeatures = ({ songId }) => {
 
   return (
     <AdditionFeaturesBlock>
-      <LikeBtn onClick={handleIsLike}>
+      <AdditionBtn onClick={handleIsLike}>
         {isLike ? <BsHeartFill color="ff033e" /> : <BsHeart color="ff033e" />}
-      </LikeBtn>
-      <AddPlaylistBtn onClick={handleIsPlaylist}>
+      </AdditionBtn>
+      <AdditionBtn onClick={handleIsPlaylist}>
         {isPlaylist ? <AiOutlineCheck /> : <BsMusicNoteList />}
-      </AddPlaylistBtn>
+      </AdditionBtn>
       <MelonLink songId={songId} />
     </AdditionFeaturesBlock>
   );
