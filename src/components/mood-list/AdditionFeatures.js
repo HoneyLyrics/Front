@@ -12,6 +12,10 @@ const AdditionFeaturesBlock = styled.div`
   align-items: center;
   font-family: 'Noto Sans', sans-serif;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (max-width: 768px) {
     width: 175px;
     position: relative;
