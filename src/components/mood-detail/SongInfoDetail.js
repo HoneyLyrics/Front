@@ -112,7 +112,7 @@ const Links = styled.span`
     font-weight: 500;
   }
 
-  .melon {
+  img {
     width: 20px;
     height: 20px;
   }
@@ -128,7 +128,7 @@ const Links = styled.span`
       font-size: 0.5rem;
     }
 
-    .melon {
+    img {
       width: 15px;
       height: 15px;
     }
