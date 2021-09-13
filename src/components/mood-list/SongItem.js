@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SongInfos from './SongInfos';
 import Thumbnail from './Thumbnail';
-import ExternalLink from './ExternalLink';
+import AdditionFeatures from './AdditionFeatures';
 
 const SongItemBlock = styled.div`
   width: 628px;
@@ -41,7 +41,7 @@ const SongItem = ({ song: { songId, singer, title, lyrics, imgURL } }) => {
         <Thumbnail imgURL={imgURL} />
         <SongInfos title={title} singer={singer} lyrics={lyrics} />
       </Link>
-      <ExternalLink songId={songId} />
+      <AdditionFeatures songId={songId} />
     </SongItemBlock>
   );
 };
