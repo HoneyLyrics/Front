@@ -11,8 +11,8 @@ const AuthContainer = styled.div`
   background-color: beige;
   /* background: url(https://cdn.pixabay.com/photo/2021/05/28/09/47/hexagon-6290360_960_720.jpg); */
   /* background: url(https://cdn.pixabay.com/photo/2021/05/28/09/48/hexagon-6290363_960_720.jpg); */
-  /* background: url(https://cdn.pixabay.com/photo/2021/05/28/09/48/hexagon-6290367_960_720.jpg); */
-  /* background-size: cover; */
+  background: url(https://cdn.pixabay.com/photo/2021/05/28/09/48/hexagon-6290367_960_720.jpg);
+  background-size: 2500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
