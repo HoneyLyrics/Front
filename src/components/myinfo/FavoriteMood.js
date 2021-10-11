@@ -7,6 +7,10 @@ const FavoriteMoodBlock = styled.div`
   width: 50vw;
   padding-left: 5%;
   overflow: auto;
+
+  h4 {
+    margin: 0.65em 0;
+  }
 `;
 
 const Wrapper = styled.div`

@@ -13,6 +13,7 @@ const MyInfoBlock = styled.div`
 
 const UserMusics = styled.div`
   width: 50vw;
+  padding-right: 5%;
 `;
 
 const MyInfos = () => {
@@ -39,98 +40,98 @@ const MyInfos = () => {
       singer: '노을',
       title: '늦은 밤 너의 집 앞 골목길에서',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/103/48/811/10348811_500.jpg?ad8ce3088dc2586de4e6b13900b80b44/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 32224166,
       singer: '#안녕',
       title: '너의 번호를 누르고 (Prod. 영화처럼)',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/103/59/126/10359126_500.jpg?893bf3ed5678b90b4896e9f0c8f2535a/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 33372784,
       singer: '아이유',
       title: '봄 안녕 봄',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/105/54/246/10554246_20210325161233_500.jpg?304eb9ed9c07a16ec6d6e000dc0e7d91/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 33372787,
       singer: '아이유',
       title: '아이와 나의 바다',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/105/54/246/10554246_20210325161233_500.jpg?304eb9ed9c07a16ec6d6e000dc0e7d91/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 30244931,
       singer: '방탄소년단',
       title: '봄날',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm/album/images/100/37/969/10037969_500.jpg?df3750c6152ad5e19ea6773a5faf71ba/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 31341518,
       singer: 'Lauv',
       title: 'Paris In The Rain',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm/album/images/102/09/752/10209752_500.jpg?cd233777e5c3a5549f555bdf544b5a30/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 32570501,
       singer: '순순희',
       title: '서면역에서',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/104/25/277/10425277_20200504103213_500.jpg?14ef34829e7bea114541c74e65d98a5b/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 33450426,
       singer: '하이라이트 (Highlight)',
       title: '불어온다',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/106/01/599/10601599_20210503143025_500.jpg?5686ba7f287acce138f208866898d995/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 1615770,
       singer: 'SG 워너비',
       title: '아리랑',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm/album/images/003/49/217/349217_500.jpg/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 31984204,
       singer: '폴킴',
       title: '안녕',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/103/17/137/10317137_500.jpg?04379f77042df907730f26c136957d65/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 32525311,
       singer: '경서예지',
       title: '사실 나는 (Feat.전건호)',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/104/16/034/10416034_20200410161209_500.jpg?5dcc944896e61ee0ffb2b238bc01f460/melon/resize/282/sharpen/0x1',
     },
     {
       songId: 32853712,
       singer: '박진영',
       title: 'When We Disco (Duet with 선미)',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/104/75/061/10475061_20200812120927_500.jpg?e0e2a4331bb0aa6e525f679804f35f8e/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 33247490,
       singer: '경서 (경서예지), MJ (써니사이드)',
       title: '술 한잔 해요',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/105/56/217/10556217_20210129115038_500.jpg?31d420f57d0eccd8ca4c34886af53577/melon/resize/282/quality/80/optimize',
     },
     {
       songId: 33372789,
       singer: '아이유',
       title: '에필로그',
       imgURL:
-        'https://cdnimg.melon.co.kr/cm2/album/images/103/30/593/10330593_20210611111519_500.jpg?2a5aa2470586b5849817ea5edece7dbf/melon/resize/282/quality/80/optimize',
+        'https://cdnimg.melon.co.kr/cm2/album/images/105/54/246/10554246_20210325161233_500.jpg?304eb9ed9c07a16ec6d6e000dc0e7d91/melon/resize/282/quality/80/optimize',
     },
   ];
   const personalPlaylist = [
