@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const LikedMusicBlock = styled.div`
@@ -7,9 +7,7 @@ const LikedMusicBlock = styled.div`
   height: 50%;
 
   h4 {
-    margin: 0;
-    margin-top: 0.65em;
-    margin-bottom: 0.65em;
+    margin: 0.65em 0;
   }
 `;
 
@@ -22,13 +20,7 @@ const CoverflowBlock = styled.div`
   overflow: hidden;
 `;
 
-const CoverSection = styled.section.attrs(props => ({
-  style: {
-    backgroundImage: `url(${props.url})`,
-    zIndex: props.zIndex,
-    transform: props.transform,
-  },
-}))`
+const CoverSection = styled.section`
   position: absolute;
   top: 71%;
   left: 57%;
@@ -54,6 +46,41 @@ const CoverSection = styled.section.attrs(props => ({
   transition: all 250ms ease-in;
 
   -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.65, transparent), to(white));
+`;
+
+const slidein = keyframes`
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-120%);
+  }
+`;
+
+const CoverTitle = styled.div`
+  width: 85px;
+  height: 18%;
+
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 300;
+
+  div {
+    width: 85px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:hover {
+    div {
+      overflow: visible;
+      animation: ${slidein} 3s linear infinite;
+    }
+  }
 `;
 
 const FlowBtn = styled.button`
@@ -94,7 +121,7 @@ const NextBtn = styled(FlowBtn)`
 `;
 
 const LikedMusic = ({ personalSongs }) => {
-  const [index, setIndex] = useState(Math.floor(0));
+  const [index, setIndex] = useState(0);
 
   const coverSections = personalSongs.map((song, i) => {
     const OFFSET = 70,
@@ -123,10 +150,17 @@ const LikedMusic = ({ personalSongs }) => {
     return (
       <CoverSection
         key={song.songId}
-        url={song.imgURL}
-        transform={transform}
-        zIndex={zIndex}
-      />
+        style={{
+          backgroundImage: `url(${song.imgURL})`,
+          transform: transform,
+          zIndex: zIndex,
+        }}
+        onClick={() => setIndex(i)}
+      >
+        <CoverTitle isFocus={index === i}>
+          <div>{song.title}</div>
+        </CoverTitle>
+      </CoverSection>
     );
   });
 
