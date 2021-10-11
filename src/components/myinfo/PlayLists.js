@@ -4,7 +4,6 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { BsMusicNoteList } from 'react-icons/bs';
 
 const PlayListsBlock = styled.div`
-  border: 2px solid green;
   height: 50%;
 
   h4 {
@@ -74,7 +73,7 @@ const PlaylistTitle = styled.div`
   overflow: hidden;
 
   .playlist-title {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     font-weight: 100;
 
     overflow: hidden;

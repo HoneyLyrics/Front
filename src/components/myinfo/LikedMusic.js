@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const LikedMusicBlock = styled.div`
-  border: 2px solid blue;
   height: 50%;
 
   h4 {

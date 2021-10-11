@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import moodInfos from '../../asset/moodInfos';
 
 const FavoriteMoodBlock = styled.div`
-  border: 2px solid red;
   width: 50vw;
   padding-left: 5%;
   overflow: auto;
