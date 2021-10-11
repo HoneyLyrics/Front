@@ -123,12 +123,12 @@ const NextBtn = styled(FlowBtn)`
 const LikedMusic = ({ personalSongs }) => {
   const [index, setIndex] = useState(0);
 
-  const coverSections = personalSongs.map((song, i) => {
-    const OFFSET = 70,
-      ROTATION = 45,
-      BASE_ZINDEX = 10,
-      MAX_ZINDEX = 42;
+  const OFFSET = 70,
+    ROTATION = 45,
+    BASE_ZINDEX = 10,
+    MAX_ZINDEX = 42;
 
+  const coverSections = personalSongs.map((song, i) => {
     let transform = null;
     let zIndex = null;
 
@@ -157,7 +157,7 @@ const LikedMusic = ({ personalSongs }) => {
         }}
         onClick={() => setIndex(i)}
       >
-        <CoverTitle isFocus={index === i}>
+        <CoverTitle>
           <div>{song.title}</div>
         </CoverTitle>
       </CoverSection>
