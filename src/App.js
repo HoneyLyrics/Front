@@ -6,6 +6,7 @@ import MusicListPage from './page/MusicListPage';
 import ScrollToTop from './util/ScrollToTop';
 import LoginPage from './page/LoginPage';
 import RegisterPage from './page/RegisterPage';
+import MyInfoPage from './page/MyInfoPage';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/musicdetail/:songid" component={MusicDetailPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
+        <Route path="/myinfo" component={MyInfoPage} />
       </Switch>
     </div>
   );
